@@ -7,6 +7,7 @@ class Gebruiker:
         self.voornaam = voornaam # voornaam onbekend
         self.achternaam = achternaam # achternaam onbekend
         self.databank = dict()
+        self.databank
 
 ### functionaliteit
 
