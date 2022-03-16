@@ -1,0 +1,15 @@
+1. Een gebruiker maakt een account.
+2. Een gebruiker meldt zich aan zonder account en krijgt een foutmelding.
+3. Een werknemer wordt toegevoegd.
+4. Een gebruiker met een account meldt zich aan en plaatst een bestelling. De gebruiker meldt
+zich af
+5. Een gebruiker betaalt bestelling
+6. annuleert bestelling
+7. stock wordt verlaag door bestelling
+8. stock wordt aangevult
+9. Ken werknemer toe aan een bestelling
+10. shop ontvangt geld.
+11. shop betaalt salaries, stock
+12. werknemer verwerkt bestelling
+13. controle op vervaldatum
+14. werknemer neemt ontslag
