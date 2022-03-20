@@ -24,7 +24,7 @@ class Bestelling:
         self.bestellingen[id_gebruiker] = id_chocolademelk, afgehaald
         return self.bestellingen
 
-    def annuleert_bestelling(self,id_gebruiker, id_chocolademelk, bestellingen):
+    def annuleert_bestelling(self,id_gebruiker):
         """
         annuleert bestelling van id_gebruiker en verwijdert uit de databank: "bestellingen".
         preconditie: id_gebruiker moet in databank "accounts" zijn en bestelling moet in databank "bestellingen zijn"
@@ -34,4 +34,5 @@ class Bestelling:
         :param bestellingen: databank met bestellingen
         :return: geeft niks terug
         """
-        pass
+
+        self.bestellingen[id_gebruiker] = None

@@ -6,9 +6,10 @@ class Chocolademelk:
         self.id = id  # nog geen id toegekend
         self.prijs = 2  # prijs is bekend
         self.credits = 5
+        self.extra = []
 
 ### functionaliteit
-    def voeg_chocolade_toe (self) :
+    def voeg_chocolade_toe (self, type) :
 
         """
         voeg een chocoladeshot toe aan de chocolademelk
@@ -22,7 +23,17 @@ class Chocolademelk:
          3 = ZWART
         : return : geeft niets terug
         """
-        pass
+        if (type == 0):
+            self.extra.append("wit")
+        elif (type == 1):
+            self.extra.append("melk")
+        elif (type == 2):
+            self.extra.append("bruin")
+        elif (type == 3):
+            self.extra.append("zwart")
+        else:
+            pass
+        self.prijs += 1
 
     def voeg_honing_toe(self):
         """
@@ -31,7 +42,8 @@ class Chocolademelk:
         postconditie: de prijs van de chocolademelk is verhoogd met 0,50 EUR
         :return: geeft niets terug
         """
-        pass
+        self.extra.append("honing")
+        self.prijs += 0.50
 
     def voeg_marshmallow_toe(self):
         """
@@ -40,7 +52,10 @@ class Chocolademelk:
         postconditie: de prijs van de chocolademelk is verhoogd met 0,75 EUR
         :return: geeft niets terug
         """
-        pass
+
+        self.extra.append("marshmallow")
+        self.prijs += 0.75
+
     def voeg_chilipeper_toe(self):
         """
         voeg chilipeper toe aan de chocolademelk
@@ -48,4 +63,6 @@ class Chocolademelk:
         postconditie: de prijs van de chocolademelk is verhoogd met 0,25 EUR
         :return: geeft niets terug
         """
-        pass
+
+        self.extra.append("chilipeper")
+        self.prijs += 0.25
