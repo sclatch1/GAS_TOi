@@ -1,5 +1,5 @@
 #============================================================================
-# Name        : TwoTreeFour tree.py
+# Name        : Two_Tree_Four_Tree.py
 # Author      : Daan Thielemans
 # Version     : 1.0
 # Copyright   : GAS - BA1 Informatica - Daan Thielemans - University of Antwerp
