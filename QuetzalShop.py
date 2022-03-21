@@ -3,6 +3,9 @@
 ## data
 class QuetzalShop:
     def __init__(self):
+        self.stock = dict()          # dictionary van de stock: product en aantal
+        self.bestellingen = dict()   # dictionary van bestellingen: bestelling en prijs
+        self.kassa = 0               # het geld in de kassa
         pass
 ### functionaliteit
 
@@ -40,7 +43,21 @@ class QuetzalShop:
         6 = zwart chocolade shot
         :return: geeft niks terug
         """
-        pass
+
+        if aantal == 0:
+            self.stock["chocolademelk"] = aantal
+        if aantal == 1:
+            self.stock["honing"] = aantal
+        if aantal == 2:
+            self.stock["marshmallow"] = aantal
+        if self.aantal == 3:
+            self.stock["chilipeper"] = aantal
+        if aantal == 4:
+            self.stock["wit chocolade shot"] = aantal
+        if aantal == 5:
+            self.stock["bruin chocolade shot"] = aantal
+        if aantal == 6:
+            self.stock["zwart chocolade shot"] = aantal
 
     def verlaag_stock(self,product, aantal):
         """
@@ -59,7 +76,20 @@ class QuetzalShop:
             6 = zwart chocolade shot
             :return: geeft niks terug
             """
-        pass
+        if aantal == 0:
+            self.stock["chocolademelk"] -= aantal
+        if aantal == 1:
+            self.stock["honing"] -= aantal
+        if aantal == 2:
+            self.stock["marshmallow"] -= aantal
+        if self.aantal == 3:
+            self.stock["chilipeper"] -= aantal
+        if aantal == 4:
+            self.stock["wit chocolade shot"] -= aantal
+        if aantal == 5:
+            self.stock["bruin chocolade shot"] -= aantal
+        if aantal == 6:
+            self.stock["zwart chocolade shot"] -= aantal
 
     def voeg_chocolade_toe (self,chocoladeshot) :
 
@@ -75,7 +105,23 @@ class QuetzalShop:
          3 = ZWART
         : return : geeft niets terug
         """
-        pass
+
+        if self.chocoladeshot == 0 and "wit chocolade shot" in self.stock:
+            self.stock["wit chocolade shot"] += 1
+        else:
+            self.stock["wit chocolade shot"] = 1
+        if chocoladeshot == 1 and "melk chocolade shot" in self.stock:
+            self.stock["melk chocolade shot"] += 1
+        else:
+            self.stock["melk chocolade shot"] = 1
+        if chocoladeshot == 2 and "bruin chocolade shot" in self.stock:
+            self.stock["bruin chocolade shot"] += 1
+        else:
+            self.stock["bruin chocolade shot"] = 1
+        if chocoladeshot == 3 and "zwart chocolade shot" in self.stock:
+            self.stock["zwart chocolade shot"] += 1
+        else:
+            self.stock["zwart chocolade shot"] = 1
 
     def voeg_honing_toe(self):
         """
@@ -84,7 +130,11 @@ class QuetzalShop:
         postconditie: de prijs van de chocolademelk is verhoogd met 0,50 EUR
         :return: geeft niets terug
         """
-        pass
+
+        if "honing" in self.stock:
+            self.stock["honing"] += 1
+        else:
+            self.stock["honing"] = 1
 
     def voeg_marshmallow_toe(self):
         """
@@ -93,7 +143,10 @@ class QuetzalShop:
         postconditie: de prijs van de chocolademelk is verhoogd met 0,75 EUR
         :return: geeft niets terug
         """
-        pass
+        if "marshmallow" in self.stock:
+            self.stock["marshmallow"] += 1
+        else:
+            self.stock["marshmallow"] = 1
 
     def voeg_chilipeper_toe(self):
         """
@@ -102,7 +155,10 @@ class QuetzalShop:
         postconditie: de prijs van de chocolademelk is verhoogd met 0,25 EUR
         :return: geeft niets terug
         """
-        pass
+        if "chilipeper" in self.stock:
+            self.stock["chilipeper"] += 1
+        else:
+            self.stock["chilipeper"] = 1
 
     def verwerkt_bestelling(self,bestelling, werknemer):
         """
@@ -123,7 +179,8 @@ class QuetzalShop:
         :param prijs_bestelling: is een integer van de prijs
         :return: geeft niks terug
         """
-        pass
+        del self.bestelling["bestelling"]
+        self.kassa += prijs_bestelling
 
     def verlaag_kassa(self,salaries,stocks):
         """
