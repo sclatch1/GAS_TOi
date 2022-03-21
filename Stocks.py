@@ -111,6 +111,9 @@ class Stocks:
         output = " chocolademelk " + str(self.chocolademelk) + " honing " + str(self.honing)
         return output
 
+# testcode
+
+"""
 s1 = Stocks()
 s1.vul_stock_aan(3,8)
 s1.vul_stock_aan(5,8)
@@ -121,3 +124,4 @@ s1.verlaag_stock(3,5)
 s1.verlaag_stock(2,5)
 s1.verlaag_stock(5,1)
 s1.print()
+"""
