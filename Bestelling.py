@@ -1,14 +1,16 @@
+#david en thomas th maakt, thomas g test
 # ADT Bestelling
 ## data
 class Bestelling:
     def __init__(self):
-        self.id = None #nog geen id toegekend
-        self.id_gebruiker = None  #email_adres in ADT Gebruiker
-        self.timestamp = None #een timestamps met tijd en datum
-        self.id_chocolademelk = None #id in ADT chocolademelk
+        self.id = None  # nog geen id toegekend
+        self.id_gebruiker = None  # email_adres in ADT Gebruiker
+        self.timestamp = None  # een timestamps met tijd en datum
+        self.id_chocolademelk = None  # id in ADT chocolademelk
         self.bestellingen = dict()
-### functionaliteit
-    def order(self,id_gebruiker, id_chocolademelk, afgehaald):
+
+    ### functionaliteit
+    def order(self, id_gebruiker, id_chocolademelk, afgehaald):
         """
         Houd bestellingen bij in een dictionary.
         preconditie: id_gebruiker en id_chocolademelk zijn strings, afgehaald een integer uit 0,1
@@ -20,11 +22,9 @@ class Bestelling:
         1 = niet afgehaald
         :return: geeft een dictionary met bestellingen terug
         """
+        pass
 
-        self.bestellingen[id_gebruiker] = id_chocolademelk, afgehaald
-        return self.bestellingen
-
-    def annuleert_bestelling(self,id_gebruiker):
+    def annuleert_bestelling(self, id_gebruiker, id_chocolademelk, bestellingen):
         """
         annuleert bestelling van id_gebruiker en verwijdert uit de databank: "bestellingen".
         preconditie: id_gebruiker moet in databank "accounts" zijn en bestelling moet in databank "bestellingen zijn"
@@ -34,5 +34,4 @@ class Bestelling:
         :param bestellingen: databank met bestellingen
         :return: geeft niks terug
         """
-
-        self.bestellingen[id_gebruiker] = None
+        pass

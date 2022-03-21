@@ -1,3 +1,4 @@
+# david en daan maakt, thomas th test
 # ADT Gebruiker
 ## data
 class Gebruiker:
@@ -7,7 +8,6 @@ class Gebruiker:
         self.voornaam = voornaam # voornaam onbekend
         self.achternaam = achternaam # achternaam onbekend
         self.databank = dict()
-        self.databank
 
 ### functionaliteit
 
@@ -22,7 +22,7 @@ class Gebruiker:
         :param e_mailadress: een string die de e_mailadres van gebruiker voorstelt
         :return: geeft niets terug
         """
-        self.databank[e_mailadress] = naam, voornaam
+        pass
 
     def meld_aan(self):
         """

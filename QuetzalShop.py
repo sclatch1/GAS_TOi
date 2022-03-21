@@ -1,3 +1,4 @@
+#thomas g en daan maakt, david test
 # ADT QuetzalShop
 ## data
 class QuetzalShop:
@@ -20,8 +21,7 @@ class QuetzalShop:
         3 = 3 credits/tijdseenheid -> student werknemer
         :return: geeft niks terug
         """
-        info_werknemer = dict()
-        info_werknemer[id] = voornaam,achternaam,workload
+        pass
 
     def vul_stock_aan(self,product, aantal):
         """

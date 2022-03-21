@@ -1,3 +1,4 @@
+#daan maakt, Thomas g test
 # ADT Marshmallow
 ## data
 class Marshmallow:
@@ -7,4 +8,4 @@ class Marshmallow:
         self.vervaldatum = None # vervaldatum is onbekend
         self.credit = 1
 
-### functionaliteit
+### functionalite

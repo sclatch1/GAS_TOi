@@ -1,3 +1,4 @@
+#david maakt, thomas g test
 # ADT Chilipeper
 ## data
 class Chilipeper:
@@ -8,4 +9,3 @@ class Chilipeper:
         self.credit = 1
 
 ### functionaliteit
-
