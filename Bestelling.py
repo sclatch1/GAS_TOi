@@ -2,15 +2,15 @@
 # ADT Bestelling
 ## data
 class Bestelling:
-    def __init__(self):
+    def __init__(self,id_gebruiker):
         self.id = None  # nog geen id toegekend
-        self.id_gebruiker = None  # email_adres in ADT Gebruiker
+        self.id_gebruiker = id_gebruiker  # email_adres in ADT Gebruiker
         self.timestamp = None  # een timestamps met tijd en datum
         self.id_chocolademelk = None  # id in ADT chocolademelk
         self.bestellingen = dict()
 
     ### functionaliteit
-    def order(self, id_gebruiker, id_chocolademelk, afgehaald):
+    def order(self, id_chocolademelk, afgehaald):
         """
         Houd bestellingen bij in een dictionary.
         preconditie: id_gebruiker en id_chocolademelk zijn strings, afgehaald een integer uit 0,1
@@ -22,9 +22,12 @@ class Bestelling:
         1 = niet afgehaald
         :return: geeft een dictionary met bestellingen terug
         """
-        pass
 
-    def annuleert_bestelling(self, id_gebruiker, id_chocolademelk, bestellingen):
+        self.bestellingen[self.id_gebruiker] = [id_chocolademelk, afgehaald]
+        print(self.bestellingen)
+        return self.bestellingen
+
+    def annuleert_bestelling(self, id_gebruiker):
         """
         annuleert bestelling van id_gebruiker en verwijdert uit de databank: "bestellingen".
         preconditie: id_gebruiker moet in databank "accounts" zijn en bestelling moet in databank "bestellingen zijn"
@@ -34,4 +37,12 @@ class Bestelling:
         :param bestellingen: databank met bestellingen
         :return: geeft niks terug
         """
-        pass
+        self.bestellingen.pop(id_gebruiker)
+        print(self.bestellingen)
+
+order1 = Bestelling("david")
+order2 = Bestelling("thomas")
+
+order1.order("donker",0)
+order2.order("melk",1)
+order1.annuleert_bestelling("david")
