@@ -1,3 +1,4 @@
+# thomas g en david maakt, daan test
 # ADT Stocks
 ## data
 class Stocks:

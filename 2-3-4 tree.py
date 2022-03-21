@@ -543,5 +543,15 @@ class Node:
         self.children_count = 0
 
 #TESTCODE
+"""
 t = TwoThreeFourTree()
 t.load({'root': [2, 5], 'children': [{'root': [1]}, {'root': [3, 4]}, {'root': [12, 15]}]})
+t.insertItem(createTreeItem(3,"david"))
+t.insertItem(createTreeItem(32,"mel"))
+t.insertItem(createTreeItem(4,"sophie"))
+t.insertItem(createTreeItem(15,"thomas"))
+t.insertItem(createTreeItem(9,"martijn"))
+t.insertItem(createTreeItem(0,"jer"))
+t.save()
+"""
+
