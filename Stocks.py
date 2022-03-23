@@ -99,11 +99,19 @@ class Stocks:
 
     def controle_verval_datum(self,product,timestamp):
         """
-@@ -64,4 +106,18 @@ def controle_verval_datum(self,product,timestamp):
+        controleert of vervaldatum van een product voor timestamp komt .
+        preconditie: product is een integer, timestamp een een string in de vorm van 00-00-0000
+        postcoditie: stock wordt verlaagt
+        :param
+        timestamp: huidige datum
+        product: een integer 0,1,2 die elk een product voorstelt:
+        1 = honing
+        2 = marshmallow
+        3 = chilipeper
         :return: geeft niks terug
         """
         pass
-        pass
+
     def print(self):
         output = " chocolademelk " + str(self.chocolademelk) + " honing " + str(self.honing)
         return output
