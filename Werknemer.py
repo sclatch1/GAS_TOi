@@ -1,7 +1,19 @@
 #thomas th maakt, Daan test
 ## functionaliteit
+
+from binary_search_tree import BST
+werknemers = BST()
 class werknemer():
-    def add_werknemer(voornaam, achternaam, workload):
+
+    def __init__(self,voornaam,achternaam,workload):
+        self.voornaam = voornaam # nog geen id toegekend
+        self.achternaam = achternaam # prijs is bekend
+        self.workload = workload # vervaldatum is onbekend
+
+    def add_werknemer(self,voornaam, achternaam, workload):
+
+        werknemers.searchTreeInsert([achternaam,[voornaam,workload]])
+        werknemers.inorderTraverse(print)
         """
         voeg een werknemer toe aan de ADT indien deze nog niet bestaat
 
@@ -17,9 +29,9 @@ class werknemer():
         : return : geeft niets terug
         """
 
-        pass
+        #pass
 
-    def verwijder_werknemer(voornaam, achternaam):
+    def verwijder_werknemer(self,voornaam, achternaam):
         """
         verwijder een werknemer van de ADT indien deze bestaat
 
@@ -34,3 +46,6 @@ class werknemer():
         """
 
         pass
+
+w1 = werknemer("david","scalais",3)
+w1.add_werknemer("david","scalais",3)
