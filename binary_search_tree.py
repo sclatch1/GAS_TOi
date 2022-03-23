@@ -1,5 +1,5 @@
 #============================================================================
-# Name        : binary search tree.py
+# Name        : binary_search_tree.py
 # Author      : Daan Thielemans
 # Version     : 1.0
 # Copyright   : GAS - BA1 Informatica - Daan Thielemans - University of Antwerp
@@ -220,7 +220,7 @@ class Node_tree:
 def createTreeItem(a, b):
     return [a, b]
 
-
+"""
 t = BST()
 t.load({'root': 100, 'children': [{'root': 50, 'children': [{'root': 20}, {'root': 90, 'children': [{'root': 70}, None]}]}, {'root': 200, 'children': [{'root': 120}, {'root': 210}]}]})
 print(t.save())
@@ -230,3 +230,4 @@ t.searchTreeDelete(70)
 print(t.save())
 t.searchTreeDelete(100)
 print(t.save())
+"""
