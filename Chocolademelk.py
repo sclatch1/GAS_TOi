@@ -2,13 +2,14 @@
 # ADT Chocolademelk
 ## data
 from arraybased_stack import MyStack
+#from circulairedubbelgelinkte_ketting import LinkedChain
 from Chocoladeshot import Chocoladeshot
 from Honing import Honing
 from Marshmallow import Marshmallow
 from Chilipeper import Chilipeper
 
 
-input = MyStack()
+input = MyStack(100)
 shot = Chocoladeshot()
 honing = Honing()
 marshmellow = Marshmallow()
@@ -37,8 +38,19 @@ class Chocolademelk:
         : return : geeft niets terug
         """
 
+        if(id == 0):
+            input.push(shot.wit)
+            self.prijs += 1
+        if(id == 1):
+            input.push(shot.melk)
+            self.prijs += 1
+        if(id == 2):
+            input.push(shot.bruin)
+            self.prijs += 1
+        if(id == 3):
+            input.push(shot.zwart)
+            self.prijs += 1
 
-        input.push(shot)
 
         pass
 
@@ -51,6 +63,7 @@ class Chocolademelk:
 
         """
         input.push(honing)
+        self.prijs += 0.5
         pass
 
     def voeg_marshmallow_toe(self):
@@ -61,6 +74,7 @@ class Chocolademelk:
         :return: geeft niets terug
         """
         input.push(marshmellow)
+        self.prijs += 0.75
         pass
     def voeg_chilipeper_toe(self):
         """
@@ -70,4 +84,5 @@ class Chocolademelk:
         :return: geeft niets terug
         """
         input.push(chilipeper)
+        self.prijs += 0.25
         pass

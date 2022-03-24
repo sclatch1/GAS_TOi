@@ -1,6 +1,7 @@
 #thomas g en daan maakt, david test
 # ADT QuetzalShop
 ## data
+
 class QuetzalShop:
     def __init__(self):
         self.stock = dict()          # dictionary van de stock: product en aantal
