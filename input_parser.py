@@ -1,5 +1,5 @@
 def input_parser(filename):
-    file1 = open('myfile.txt', 'r')
+    file1 = open(filename, 'r')
     Lines = file1.readlines()
     count = 0
     for line in Lines:
