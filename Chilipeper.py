@@ -2,7 +2,7 @@
 # ADT Chilipeper
 ## data
 class Chilipeper:
-    def __init__(self,id):
+    def __init__(self):
         self.id = id # nog geen id toegekend
         self.prijs = 0,25 # prijs is bekend
         self.vervaldatum = None # vervaldatum is onbekend

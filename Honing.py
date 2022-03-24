@@ -2,7 +2,7 @@
 # ADT Honing
 ## data
 class Honing:
-    def __init__(self,id):
+    def __init__(self):
         self.id = id # nog geen id toegekend
         self.prijs = 0,50 # prijs is bekend
         self.vervaldatum = None # vervaldatum is onbekend
