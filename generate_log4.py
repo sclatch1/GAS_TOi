@@ -1,11 +1,12 @@
 
 output = "<html>"
-rij = "<TABLE BORDER=1>"
+output += "<TABLE BORDER=1>"
 for i in range(6):
-    rij + "<TR>" + "<TD>" + "david" + "</TD>"
-    output + rij
-    rij = ""
-
-output += "</html>"
+    rij = "<TR>"
+    for j in range(7):
+        rij += "<TD>" + "melk" + "</TD>"
+    rij += "</TR>"
+    output += rij
+output += "</table> </html>"
 hs = open("test.html",'w')
 hs.write(output)
