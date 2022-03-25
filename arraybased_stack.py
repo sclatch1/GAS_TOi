@@ -52,7 +52,7 @@ class MyStack():
         self.a=list
         self.max_size=len(list)
 
-
+"""
 s = MyStack(2)
 print(s.isEmpty())
 print(s.getTop())
@@ -64,10 +64,10 @@ print(s.isEmpty())
 print(s.pop())
 s.push(5)
 print(s.save())
-
 s.load(['a','b','c'])
 print(s.save())
 print(s.pop())
 print(s.save())
 print(s.getTop())
 print(s.save())
+"""

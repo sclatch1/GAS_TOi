@@ -1,6 +1,7 @@
 # david maakt, Daan test
 # ADT Chocoladeshot
 ## data
+
 class Chocoladeshot:
     def __init__(self):
         #soorten chocolade
@@ -14,3 +15,4 @@ class Chocoladeshot:
         self.credit = 1
 
 ### functionaliteit
+

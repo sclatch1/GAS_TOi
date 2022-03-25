@@ -39,6 +39,7 @@ class Bestelling:
         """
         self.bestellingen.pop(id_gebruiker)
         print(self.bestellingen)
+        return self.bestellingen
 
 order1 = Bestelling("david")
 order2 = Bestelling("thomas")

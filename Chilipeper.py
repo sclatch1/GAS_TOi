@@ -1,6 +1,9 @@
 #david maakt, thomas g test
 # ADT Chilipeper
 ## data
+import datetime
+
+
 class Chilipeper:
     def __init__(self):
         self.id = id # nog geen id toegekend
@@ -9,3 +12,6 @@ class Chilipeper:
         self.credit = 1
 
 ### functionaliteit
+
+    def to_string(self):
+        return id

@@ -1,24 +1,25 @@
 # thomas g en david maakt, daan test
 # ADT Stocks
 ## data
-import Chilipeper
-import Chocolademelk
-import Chocoladeshot
-
+from Chilipeper import Chilipeper
+from Chocolademelk import Chocolademelk
+from Chocoladeshot import Chocoladeshot
+from Marshmallow import Marshmallow
+from Honing import Honing
 
 class Stocks:
     def __init__(self):
-        self.chocoladeshots = [None] #aantal niet gekend
-        self.honingsporties = [None] #aantal niet gekend
-        self.marshmallows = [None] #aantal niet gekend
-        self.chilipeperporties = [None] #aantal niet gekend
-        self.chocolademelk = 0 #aantal niet gekend
-        self.wit_chocolade_shot = 0  # aantal niet gekend
-        self.bruin_chocolade_shot = 0  # aantal niet gekend
-        self.zwart_chocolade_shot = 0  # aantal niet gekend
-        self.honing = 0 #aantal niet gekend
-        self.marshmallows = 0 #aantal niet gekend
-        self.chilipeper = 0 #aantal niet gekend
+        choco = Chocoladeshot()
+        marsh = Marshmallow()
+        hon = Honing()
+        chili = Chilipeper()
+        self.marshmallows = [marsh,0]
+        self.chocolademelk = [choco,0]
+        self.wit_chocolade_shot = [choco,0]
+        self.bruin_chocolade_shot = [choco,0]
+        self.zwart_chocolade_shot = [choco,0]
+        self.honing = [hon,0]
+        self.chilipeper = [chili,0]
         self.stock = [self.honing,self.chilipeper,self.bruin_chocolade_shot,self.zwart_chocolade_shot,self.chocolademelk,self.wit_chocolade_shot,self.marshmallows]
 
 ### functionaliteit
@@ -40,27 +41,41 @@ class Stocks:
             6 = zwart chocolade shot
             :return: geeft niks terug
             """
-        pass
         if product == 0:
-            self.chocolademelk -= aantal
+            self.stock[product][1] -= aantal
+            if(self.stock[product][1] < 0):
+                self.stock[product][1] = 0
         elif product == 1:
-            self.honing -= aantal
+            self.stock[product][1] -= aantal
+            if (self.stock[product][1] < 0):
+                self.stock[product][1] = 0
         elif product == 2:
-            self.marshmallows -= aantal
+            self.stock[product][1] -= aantal
+            if (self.stock[product][1] < 0):
+                self.stock[product][1] = 0
         elif product == 3:
-            self.chilipeper = self.chilipeper - aantal
+            self.stock[product][1] -= aantal
+            if (self.stock[product][1] < 0):
+                self.stock[product][1] = 0
         elif product == 4:
-            self.wit_chocolade_shot -= aantal
+            self.stock[product][1] -= aantal
+            if (self.stock[product][1] < 0):
+                self.stock[product][1] = 0
         elif product == 5:
-            self.bruin_chocolade_shot -= aantal
+            self.stock[product][1] -= aantal
+            if (self.stock[product][1] < 0):
+                self.stock[product][1] = 0
         elif product == 6:
-            self.zwart_chocolade_shot -= aantal
+            self.stock[product][1] -= aantal
+            if (self.stock[product][1] < 0):
+                self.stock[product][1] = 0
         #if self.honing < 0 or self.zwart_chocolade_shot < 0 or self.bruin_chocolade_shot < 0 or self.wit_chocolade_shot < 0 or self.chocolademelk < 0 or self.chilipeper < 0 or self.marshmallows < 0:
         #for ingredient in self.stock:
         #    if ingredient < 0:
         #        ingredient = 0
         else:
             print("inkopen")
+        print(self.stock)
 
     def vul_stock_aan(self,product, aantal):
         """
@@ -79,23 +94,23 @@ class Stocks:
         6 = zwart chocolade shot
         :return: geeft niks terug
         """
-        pass
         if product == 0:
-            self.chocolademelk = aantal
+            self.stock[product][1] = aantal
         elif product == 1:
-            self.honing = aantal
+            self.stock[product][1] = aantal
         elif product == 2:
-            self.marshmallows = aantal
+            self.stock[product][1] = aantal
         elif product == 3:
-            self.chilipeper = aantal
+            self.stock[product][1] = aantal
         elif product == 4:
-            self.wit_chocolade_shot = aantal
+            self.stock[product][1] = aantal
         elif product == 5:
-            self.bruin_chocolade_shot = aantal
+            self.stock[product][1] = aantal
         elif product == 6:
-            self.zwart_chocolade_shot = aantal
+            self.stock[product][1] = aantal
         else:
             print("is geen geldige input")
+        print(self.stock)
 
     def controle_verval_datum(self,product,timestamp):
         """
@@ -110,19 +125,25 @@ class Stocks:
         3 = chilipeper
         :return: geeft niks terug
         """
-        pass
+        for product in self.stock:
+            if product.vervaldatum < timestamp:
+                product[1] = 0
 
     def print(self):
         output = " chocolademelk " + str(self.chocolademelk) + " honing " + str(self.honing)
         return output
 
+
 s1 = Stocks()
-s1.vul_stock_aan(3,8)
+s1.vul_stock_aan(2,8)
 s1.vul_stock_aan(5,8)
 s1.vul_stock_aan(9,8)
 s1.vul_stock_aan(0,8)
 
-s1.verlaag_stock(3,5)
+
 s1.verlaag_stock(2,5)
 s1.verlaag_stock(5,1)
+
+"""
 s1.print()
+"""
