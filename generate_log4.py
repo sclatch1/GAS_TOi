@@ -1,12 +1,26 @@
 
-output = "<html>"
+output = "<html>" + "<h1>LOG</h1>"
 output += "<TABLE BORDER=1>"
+
+lijst = ["tijdstip","stack","naam","Nieuwe bestellingen","Wachtende bestellingen","wit","melk","zwart","honing","marshmallow","chili"]
+
+counter = 0
 for i in range(6):
-    rij = "<TR>"
-    for j in range(7):
-        rij += "<TD>" + "melk" + "</TD>"
+    eersterij = "<TR>"
+    rij = "</TR>"
+    for item in lijst:
+        if counter == 0:
+            eersterij += "<TD>" + item + "</TD>"
+        else:
+            rij += "<TD>" + "</TD>"
     rij += "</TR>"
-    output += rij
+    eersterij += "</TR>"
+    if counter == 0:
+        output += eersterij
+    else:
+        output += rij
+    counter += 1
+
 output += "</table> </html>"
 hs = open("test.html",'w')
 hs.write(output)
