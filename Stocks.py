@@ -20,7 +20,7 @@ class Stocks:
         self.zwart_chocolade_shot = [choco,0]
         self.honing = [hon,0]
         self.chilipeper = [chili,0]
-        self.stock = [self.honing,self.chilipeper,self.bruin_chocolade_shot,self.zwart_chocolade_shot,self.chocolademelk,self.wit_chocolade_shot,self.marshmallows]
+        self.stock = [self.chocolademelk,self.honing,self.marshmallows,self.chilipeper,self.wit_chocolade_shot,self.bruin_chocolade_shot,self.zwart_chocolade_shot]
 
 ### functionaliteit
 
@@ -95,22 +95,22 @@ class Stocks:
         :return: geeft niks terug
         """
         if product == 0:
-            self.stock[product][1] = aantal
+            self.stock[product][1] += aantal
         elif product == 1:
-            self.stock[product][1] = aantal
+            self.stock[product][1] += aantal
         elif product == 2:
-            self.stock[product][1] = aantal
+            self.stock[product][1] += aantal
         elif product == 3:
-            self.stock[product][1] = aantal
+            self.stock[product][1] += aantal
         elif product == 4:
-            self.stock[product][1] = aantal
+            self.stock[product][1] += aantal
         elif product == 5:
-            self.stock[product][1] = aantal
+            self.stock[product][1] += aantal
         elif product == 6:
-            self.stock[product][1] = aantal
+            self.stock[product][1] += aantal
         else:
             print("is geen geldige input")
-        print(self.stock)
+
 
     def controle_verval_datum(self,product,timestamp):
         """
@@ -130,10 +130,12 @@ class Stocks:
                 product[1] = 0
 
     def print(self):
-        output = " chocolademelk " + str(self.chocolademelk) + " honing " + str(self.honing)
+        output = " chocolademelk: " + str(self.chocolademelk[1]) + " honing: " + str(self.honing[1]) + " chili: " + str(self.chilipeper[1]) + " marshmallow: " + str(self.marshmallows[1]) + " wit: " + str(self.wit_chocolade_shot[1])
+        output += " zwart: " + str(self.zwart_chocolade_shot[1]) + " bruin: " + str(self.bruin_chocolade_shot[1])
         return output
 
 
+"""
 s1 = Stocks()
 s1.vul_stock_aan(2,8)
 s1.vul_stock_aan(5,8)
@@ -144,6 +146,4 @@ s1.vul_stock_aan(0,8)
 s1.verlaag_stock(2,5)
 s1.verlaag_stock(5,1)
 
-"""
-s1.print()
 """

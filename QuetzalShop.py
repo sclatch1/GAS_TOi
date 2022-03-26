@@ -1,10 +1,11 @@
 #thomas g en daan maakt, david test
 # ADT QuetzalShop
 ## data
+from Stocks import Stocks
 
 class QuetzalShop:
     def __init__(self):
-        self.stock = dict()          # dictionary van de stock: product en aantal
+        self.stock = Stocks()         # dictionary van de stock: product en aantal
         self.bestellingen = dict()   # dictionary van bestellingen: bestelling en prijs
         self.kassa = 0               # het geld in de kassa
         pass
@@ -34,7 +35,7 @@ class QuetzalShop:
         postconditie: stock wordt verhoogt met aantal van elk product en kassa wordt verlaagt.
         :param
         aantal: aantal te vullen producten
-        product: een integer 0,1,2,3,4,5,6,7 die elk een product voorstelt:
+        product: een integer 0,1,2,3 die elk een product voorstelt:
         0 = chocolademelk
         1 = honing
         2 = marshmallow
@@ -42,26 +43,25 @@ class QuetzalShop:
         4 = wit chocolade shot
         5 = bruin chocolade shot
         6 = zwart chocolade shot
-        7 = melk shot
         :return: geeft niks terug
         """
-
         if product == 0:
-            self.stock["chocolademelk"] += aantal
-        if product == 1:
-            self.stock["honing"] += aantal
-        if product == 2:
-            self.stock["marshmallow"] += aantal
-        if product == 3:
-            self.stock["chilipeper"] += aantal
-        if product == 4:
-            self.stock["wit chocolade shot"] += aantal
-        if product == 5:
-            self.stock["bruin chocolade shot"] += aantal
-        if product == 6:
-            self.stock["zwart chocolade shot"] += aantal
-        if product == 7:
-            self.stock["melk shot"] += aantal
+            self.stock[product][1] += aantal
+        elif product == 1:
+            self.stock[product][1] += aantal
+        elif product == 2:
+            self.stock[product][1] += aantal
+        elif product == 3:
+            self.stock[product][1] += aantal
+        elif product == 4:
+            self.stock[product][1] += aantal
+        elif product == 5:
+            self.stock[product][1] += aantal
+        elif product == 6:
+            self.stock[product][1] += aantal
+        else:
+            print("is geen geldige input")
+        print(self.stock)
 
 
     def verlaag_stock(self,product, aantal):

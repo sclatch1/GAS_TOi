@@ -1,25 +1,31 @@
 
-output = "<html>" + "<h1>LOG</h1>"
+output = "<html>" + "<h1>Log</h1>"
 output += "<TABLE BORDER=1>"
 
 lijst = ["tijdstip","stack","naam","Nieuwe bestellingen","Wachtende bestellingen","wit","melk","zwart","honing","marshmallow","chili"]
 
-counter = 0
+rowCounter = 0
+collumnCounter = 0
 for i in range(6):
     eersterij = "<TR>"
     rij = "</TR>"
     for item in lijst:
-        if counter == 0:
+        if rowCounter == 0:
             eersterij += "<TD>" + item + "</TD>"
+        elif rowCounter > 0 and collumnCounter == 0:
+            rij += "<TD>" + str(rowCounter) + "</TD>"
         else:
             rij += "<TD>" + "</TD>"
+        collumnCounter += 1
+    collumnCounter = 0
     rij += "</TR>"
     eersterij += "</TR>"
-    if counter == 0:
+    if rowCounter == 0:
         output += eersterij
     else:
         output += rij
-    counter += 1
+    rowCounter += 1
+
 
 output += "</table> </html>"
 hs = open("log4.html", 'w')
