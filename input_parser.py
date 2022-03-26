@@ -18,27 +18,29 @@ def input_parser(filename):
                 shop = QuetzalShop
 
             # vul stock aan
+            line = ''.join([i for i in line if not i.isalpha()])    # extract numbers
+            numbers = line.split()
             if ("shot" in line):
                 if ("melk" in line):
-                    return
+                    shop.QuetzalShop.vul_stock_aan(7,numbers[0])
 
                 if ("wit" in line):
-                    return
+                    shop.QuetzalShop.vul_stock_aan(4,numbers[0])
 
                 if ("zwart" in line):
-                    return
+                    shop.QuetzalShop.vul_stock_aan(6,numbers[0])
 
                 if ("bruin" in line):
-                    return
+                    shop.QuetzalShop.vul_stock_aan(5,numbers[0])
 
             if ("honing" in line):
-                return
+                shop.QuetzalShop.vul_stock_aan(1,numbers[0])
 
             if ("marshmellow" in line):
-                return
+                shop.QuetzalShop.vul_stock_aan(2,numbers[0])
 
             if ("chili" in line):
-                return
+                shop.QuetzalShop.vul_stock_aan(3,numbers[0])
 
             # vul werknemers en gebruikers aan
             if ("werknemer" in line):
