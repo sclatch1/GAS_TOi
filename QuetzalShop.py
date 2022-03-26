@@ -10,7 +10,7 @@ class QuetzalShop:
         pass
 ### functionaliteit
 
-    def werknemr(self,id, voornaam, achternaam, workload):
+    def werknemer(self,id, voornaam, achternaam, workload):
         """
         Houd een dictionary van informatie over een werknemer bij
         preconditie = id, voornaam, achternaam zijn strings
