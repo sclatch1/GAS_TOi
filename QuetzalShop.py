@@ -10,7 +10,7 @@ class QuetzalShop:
         pass
 ### functionaliteit
 
-    def werknemr(self,id, voornaam, achternaam, workload):
+    def werknemer(self,id, voornaam, achternaam, workload):
         """
         Houd een dictionary van informatie over een werknemer bij
         preconditie = id, voornaam, achternaam zijn strings
@@ -34,7 +34,7 @@ class QuetzalShop:
         postconditie: stock wordt verhoogt met aantal van elk product en kassa wordt verlaagt.
         :param
         aantal: aantal te vullen producten
-        product: een integer 0,1,2,3 die elk een product voorstelt:
+        product: een integer 0,1,2,3,4,5,6,7 die elk een product voorstelt:
         0 = chocolademelk
         1 = honing
         2 = marshmallow
@@ -42,23 +42,27 @@ class QuetzalShop:
         4 = wit chocolade shot
         5 = bruin chocolade shot
         6 = zwart chocolade shot
+        7 = melk shot
         :return: geeft niks terug
         """
 
-        if aantal == 0:
-            self.stock["chocolademelk"] = aantal
-        if aantal == 1:
-            self.stock["honing"] = aantal
-        if aantal == 2:
-            self.stock["marshmallow"] = aantal
-        if self.aantal == 3:
-            self.stock["chilipeper"] = aantal
-        if aantal == 4:
-            self.stock["wit chocolade shot"] = aantal
-        if aantal == 5:
-            self.stock["bruin chocolade shot"] = aantal
-        if aantal == 6:
-            self.stock["zwart chocolade shot"] = aantal
+        if product == 0:
+            self.stock["chocolademelk"] += aantal
+        if product == 1:
+            self.stock["honing"] += aantal
+        if product == 2:
+            self.stock["marshmallow"] += aantal
+        if product == 3:
+            self.stock["chilipeper"] += aantal
+        if product == 4:
+            self.stock["wit chocolade shot"] += aantal
+        if product == 5:
+            self.stock["bruin chocolade shot"] += aantal
+        if product == 6:
+            self.stock["zwart chocolade shot"] += aantal
+        if product == 7:
+            self.stock["melk shot"] += aantal
+
 
     def verlaag_stock(self,product, aantal):
         """
@@ -83,7 +87,7 @@ class QuetzalShop:
             self.stock["honing"] -= aantal
         if aantal == 2:
             self.stock["marshmallow"] -= aantal
-        if self.aantal == 3:
+        if aantal == 3:
             self.stock["chilipeper"] -= aantal
         if aantal == 4:
             self.stock["wit chocolade shot"] -= aantal
