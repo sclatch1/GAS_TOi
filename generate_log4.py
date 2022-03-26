@@ -22,5 +22,5 @@ for i in range(6):
     counter += 1
 
 output += "</table> </html>"
-hs = open("test.html",'w')
+hs = open("log4.html", 'w')
 hs.write(output)
