@@ -19,15 +19,8 @@ class Output:
 
 
     def generate_data(self):
-        data = []
-        self.bestellingen.bestellingen.save()
-        self.stock.stock_shot_wit
-        data += self.bestellingen.bestellingen.save()
-        for element in data:
-            if element[0] == 2:
-                self.tijdstip_1 += "hey"
-        print(data,"test")
-        print(self.tijdstip_1)
+        data = self.bestellingen.bestellingen.save()
+        print(data)
     #
 
 
