@@ -103,6 +103,7 @@ class QuetzalShop:
         """
         log = Output(self.bestellingen,self.stock,self.werknemers)
         log.generate_html()
+        log.generate_data()
 
     def verwerk_bestelling(self, bestelling, werknemer):
         """

@@ -1,6 +1,7 @@
-from Stocks import Stocks
 from Bestelling import Bestelling
+from Stocks import Stocks
 from Werknemer import werknemers
+
 
 class Output:
     def __init__(self, bestelling: Bestelling, stock: Stocks, werknemers: werknemers):
@@ -18,8 +19,12 @@ class Output:
 
     def generate_data(self):
         data = []
-        for element in self.stock.
-            print("test")
+        self.bestellingen.bestellingen.save()
+        for i in range(5):
+            data += self.bestellingen.bestellingen.save
+        print(data)
+
+
 
     def generate_html(self):
         output = "<html>" + "<h1>Log</h1>"
@@ -45,5 +50,4 @@ class Output:
         output += "</table> </html>"
         hs = open( "log4" + ".html", 'w')
         hs.write(output)
-
 
