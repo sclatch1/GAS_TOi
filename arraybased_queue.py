@@ -1,5 +1,5 @@
 #============================================================================
-# Name        : arraybased queue.py
+# Name        : arraybased_queue.py
 # Author      : Daan Thielemans
 # Version     : 1.0
 # Copyright   : GAS - BA1 Informatica - Daan Thielemans - University of Antwerp
