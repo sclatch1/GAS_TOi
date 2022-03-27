@@ -1,13 +1,5 @@
-# thomassen maakt, David test
 # ADT Chocolademelk
 ## data
-from arraybased_stack import MyStack
-from Chocoladeshot import Chocoladeshot
-from Honing import Honing
-from Marshmallow import Marshmallow
-from Chilipeper import Chilipeper
-
-
 class Chocolademelk:
     def __init__(self):
         self.prijs = 2  # prijs is bekend
@@ -43,8 +35,6 @@ class Chocolademelk:
             self.ingredienten[6] += 1
             self.prijs += 1
 
-        pass
-
     def voeg_honing_toe(self):
         """
         voeg honing toe aan de chocolademelk
@@ -55,7 +45,6 @@ class Chocolademelk:
         """
         self.ingredienten[0] += 1
         self.prijs += 0.5
-        pass
 
     def voeg_marshmallow_toe(self):
         """
@@ -66,7 +55,6 @@ class Chocolademelk:
         """
         self.ingredienten[1] += 1
         self.prijs += 0.75
-        pass
 
     def voeg_chilipeper_toe(self):
         """
@@ -77,4 +65,3 @@ class Chocolademelk:
         """
         self.ingredienten[2] += 1
         self.prijs += 0.25
-        pass

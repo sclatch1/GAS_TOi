@@ -1,5 +1,4 @@
-#thomas th maakt, Daan test
-## functionaliteit
+# functionaliteit
 
 from binary_search_tree import BST
 class werknemers():

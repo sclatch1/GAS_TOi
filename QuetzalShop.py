@@ -1,4 +1,3 @@
-# thomas g en daan maakt, david test
 # ADT QuetzalShop
 ## data
 import Stocks
@@ -88,6 +87,23 @@ class QuetzalShop:
 
         self.stock.verlaag_stock(product, aantal)
 
+    def bestelling(self, tijdstip, tijd, ingredienten, email):
+        """
+        voeg bestelling toe
+        preconditie: alle nodige variablen
+        postconditie: bestelling toegevoegd aan ADT
+        :return: geeft niks terug
+        """
+
+        self.bestellingen.order(tijdstip, tijd, ingredienten, email, self.stock)
+
+    def output(self):
+        """
+        :return: output gegevens in html bestand
+        """
+        log = generate_log.Output(self)
+        log.generate_html()
+
     def verwerk_bestelling(self, bestelling, werknemer):
         """
         verwerkt een bestelling door een werknemer via credit systeem.
@@ -107,8 +123,7 @@ class QuetzalShop:
         :param prijs_bestelling: is een integer van de prijs
         :return: geeft niks terug
         """
-        del self.bestelling["bestelling"]
-        self.kassa += prijs_bestelling
+        pass
 
     def verlaag_kassa(self, salaries, stocks):
         """
@@ -131,20 +146,3 @@ class QuetzalShop:
         :return: geeft niks terug
         """
         pass
-
-    def bestelling(self, tijdstip, tijd, ingredienten, email):
-        """
-        voeg bestelling toe
-        preconditie: alle nodige variablen
-        postconditie: bestelling toegevoegd aan ADT
-        :return: geeft niks terug
-        """
-
-        self.bestellingen.order(tijdstip, tijd, ingredienten, email, self.stock)
-
-    def output(self):
-        """
-        :return: output gegevens in html bestand
-        """
-        log = generate_log.Output(self)
-        log.generate_html()

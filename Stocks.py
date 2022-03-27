@@ -1,4 +1,3 @@
-# thomas g en david maakt, daan test
 # ADT Stocks
 ## data
 from Chilipeper import Chilipeper

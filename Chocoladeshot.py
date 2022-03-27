@@ -1,4 +1,3 @@
-# david maakt, Daan test
 # ADT Chocoladeshot
 ## data
 
@@ -19,4 +18,3 @@ class Chocoladeshot:
         self.credit = 1
 
 ### functionaliteit
-

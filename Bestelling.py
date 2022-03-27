@@ -18,7 +18,7 @@ class Bestelling:
         postconditie : bestelling wordt toegevoegd aan bestellingen
         :param tijdstip: een cijfer dat het tijdstip aanduid
         :param tijd: de tijd die bij het tijdstip hoort
-        :param ingredienten: een array van ingredienten (0-6)
+        :param ingredienten: een array van ingredienten
         :param email: email van de gebruiker
         :param stock: de stock van de winkel
         :return: geeft niks terug
@@ -89,9 +89,7 @@ class Bestelling:
         annuleert bestelling van id_gebruiker en verwijdert uit de databank: "bestellingen".
         preconditie: id_gebruiker moet in databank "accounts" zijn en bestelling moet in databank "bestellingen zijn"
         postconditie: bestelling wordt verwijdert uit databank "bestellingen"
-        :param id_gebruiker: unieke string
-        :param id_chocolademelk: uinieke string
-        :param bestellingen: databank met bestellingen
+        :param email: unieke string
         :return: geeft niks terug
         """
 

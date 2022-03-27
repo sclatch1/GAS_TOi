@@ -1,4 +1,3 @@
-# david en daan maakt, thomas th test
 # ADT Gebruiker
 ## data
 from binary_search_tree import BST
