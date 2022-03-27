@@ -25,7 +25,7 @@ class Bestelling:
         :return: geeft niks terug
         """
 
-        self.timestamps[tijd] = tijdstip
+        self.timestamps[tijdstip] = tijd
 
         bestelling = Chocolademelk()
 

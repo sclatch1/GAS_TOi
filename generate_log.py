@@ -26,6 +26,3 @@ class Output:
         output += "</table> </html>"
         hs = open("log4.html", 'w')
         hs.write(output)
-
-Out = Output()
-Out.generate_html()
