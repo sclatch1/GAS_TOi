@@ -37,3 +37,4 @@ class Output:
         output += "</table> </html>"
         hs = open("log" + self.name + ".html", 'w')
         hs.write(output)
+
