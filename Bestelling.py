@@ -1,13 +1,15 @@
-#david en thomas th maakt, thomas g test
+# david en thomas th maakt, thomas g test
 # ADT Bestelling
 ## data
 from arraybased_queue import MyQueue
 from Chocolademelk import Chocolademelk
 import Stocks
+
+
 class Bestelling:
     def __init__(self):
         self.bestellingen = MyQueue(100)
-        self.timestamps = dict
+        self.timestamps = dict()
 
     ### functionaliteit
     def order(self, tijdstip, tijd, ingredienten, email, stock: Stocks.Stocks):
@@ -23,12 +25,14 @@ class Bestelling:
         :return: geeft niks terug
         """
 
+        self.timestamps[tijd] = tijdstip
+
         bestelling = Chocolademelk()
 
         for x in ingredienten:
             if x == 0:
                 bestelling.voeg_honing_toe()
-                stock.verlaag_stock(0,1)
+                stock.verlaag_stock(0, 1)
 
             elif x == 1:
                 bestelling.voeg_marshmallow_toe()
@@ -54,8 +58,7 @@ class Bestelling:
                 bestelling.voeg_chocolade_toe(3)
                 stock.verlaag_stock(6, 1)
 
-
-        self.bestellingen.enqueue([tijdstip, email])
+        self.bestellingen.enqueue([tijdstip, email, bestelling])
 
     def annuleert_bestelling(self, email):
         """
