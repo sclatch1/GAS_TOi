@@ -28,7 +28,7 @@ class QuetzalShop:
         """
         pass
 
-    def vul_stock_aan(self,product, aantal):
+    def vul_stock_aan(self,product, aantal, vervaldatum):
         """
         vul stock aan met chocolademelk, wit chocolade shot, bruin chocolade shot, zwart chocolade shot, honing, marshmallow, chilipeper
         preconditie: een integer 0,1,2,3,4,5,6 voor product en een integer voor aantal
@@ -36,33 +36,17 @@ class QuetzalShop:
         :param
         aantal: aantal te vullen producten
         product: een integer 0,1,2,3 die elk een product voorstelt:
-        0 = chocolademelk
-        1 = honing
-        2 = marshmallow
-        3 = chilipeper
-        4 = wit chocolade shot
-        5 = bruin chocolade shot
-        6 = zwart chocolade shot
+        0 = honing
+        1 = marshmallow
+        2 = chilipeper
+        3 = wit chocolade shot
+        4 = bruin chocolade shot
+        5 = zwart chocolade shot
+        6 = melk chocolade shot
         :return: geeft niks terug
         """
-        if product == 0:
-            self.stock[product][1] += aantal
-        elif product == 1:
-            self.stock[product][1] += aantal
-        elif product == 2:
-            self.stock[product][1] += aantal
-        elif product == 3:
-            self.stock[product][1] += aantal
-        elif product == 4:
-            self.stock[product][1] += aantal
-        elif product == 5:
-            self.stock[product][1] += aantal
-        elif product == 6:
-            self.stock[product][1] += aantal
-        else:
-            print("is geen geldige input")
-        print(self.stock)
 
+        self.stock.vul_stock_aan(product,aantal, vervaldatum)
 
     def verlaag_stock(self,product, aantal):
         """
@@ -72,29 +56,17 @@ class QuetzalShop:
             :param
             aantal: aantal te verlagen producten
             product: een integer 0,1,2,3 die elk een product voorstelt:
-            0 = chocolademelk
-            1 = honing
-            2 = marshmallow
-            3 = chilipeper
-            4 = wit chocolade shot
-            5 = bruin chocolade shot
-            6 = zwart chocolade shot
+            0 = honing
+            1 = marshmallow
+            2 = chilipeper
+            3 = wit chocolade shot
+            4 = bruin chocolade shot
+            5 = zwart chocolade shot
+            6 = melk chocolade shot
             :return: geeft niks terug
             """
-        if aantal == 0:
-            self.stock["chocolademelk"] -= aantal
-        if aantal == 1:
-            self.stock["honing"] -= aantal
-        if aantal == 2:
-            self.stock["marshmallow"] -= aantal
-        if aantal == 3:
-            self.stock["chilipeper"] -= aantal
-        if aantal == 4:
-            self.stock["wit chocolade shot"] -= aantal
-        if aantal == 5:
-            self.stock["bruin chocolade shot"] -= aantal
-        if aantal == 6:
-            self.stock["zwart chocolade shot"] -= aantal
+
+        self.stock.verlaag_stock(product, aantal)
 
     def voeg_chocolade_toe (self,chocoladeshot) :
 

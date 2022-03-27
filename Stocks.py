@@ -19,13 +19,13 @@ def days_calculator(date1, date2):
 class Stocks:
     def __init__(self):
         # elke stock opgeslagen in een aparte queue
-        self.stock_chili = arraybased_queue.MyQueue
-        self.stock_marshmellow = arraybased_queue.MyQueue
-        self.stock_honing = arraybased_queue.MyQueue
-        self.stock_shot_melk = arraybased_queue.MyQueue
-        self.stock_shot_wit = arraybased_queue.MyQueue
-        self.stock_shot_zwart = arraybased_queue.MyQueue
-        self.stock_shot_bruin = arraybased_queue.MyQueue
+        self.stock_chili = arraybased_queue.MyQueue(100)
+        self.stock_marshmellow = arraybased_queue.MyQueue(100)
+        self.stock_honing = arraybased_queue.MyQueue(100)
+        self.stock_shot_melk = arraybased_queue.MyQueue(100)
+        self.stock_shot_wit = arraybased_queue.MyQueue(100)
+        self.stock_shot_zwart = arraybased_queue.MyQueue(100)
+        self.stock_shot_bruin = arraybased_queue.MyQueue(100)
 
     ### functionaliteit
 
@@ -49,32 +49,32 @@ class Stocks:
         """
 
         if (product == 0):
-            for x in range(aantal):
-                self.stock_honing.enqueue(self.stock_honing, vervaldatum)
+            for x in range(int(aantal)):
+                self.stock_honing.enqueue(vervaldatum)
 
         elif (product == 1):
-            for x in range(aantal):
-                self.stock_marshmellow.enqueue(self.stock_marshmellow, vervaldatum)
+            for x in range(int(aantal)):
+                self.stock_marshmellow.enqueue(vervaldatum)
 
         elif (product == 2):
-            for x in range(aantal):
-                self.stock_chili.enqueue(self.stock_chili, vervaldatum)
+            for x in range(int(aantal)):
+                self.stock_chili.enqueue(vervaldatum)
 
         elif (product == 3):
-            for x in range(aantal):
-                self.stock_shot_wit.enqueue(self.stock_shot_wit, vervaldatum)
+            for x in range(int(aantal)):
+                self.stock_shot_wit.enqueue(vervaldatum)
 
         elif (product == 4):
-            for x in range(aantal):
-                self.stock_shot_bruin.enqueue(self.stock_shot_bruin, vervaldatum)
+            for x in range(int(aantal)):
+                self.stock_shot_bruin.enqueue(vervaldatum)
 
         elif (product == 5):
-            for x in range(aantal):
-                self.stock_shot_zwart.enqueue(self.stock_shot_zwart, vervaldatum)
+            for x in range(int(aantal)):
+                self.stock_shot_zwart.enqueue(vervaldatum)
 
         elif (product == 6):
-            for x in range(aantal):
-                self.stock_shot_melk.enqueue(self.stock_shot_melk, vervaldatum)
+            for x in range(int(aantal)):
+                self.stock_shot_melk.enqueue(vervaldatum)
 
     def verlaag_stock(self, product, aantal):
         """
@@ -95,31 +95,31 @@ class Stocks:
         """
         if (product == 0):
             for x in range(aantal):
-                self.stock_honing.dequeue(self.stock_honing)
+                self.stock_honing.dequeue()
 
         elif (product == 1):
             for x in range(aantal):
-                self.stock_marshmellow.dequeue(self.stock_marshmellow)
+                self.stock_marshmellow.dequeue()
 
         elif (product == 2):
             for x in range(aantal):
-                self.stock_chili.dequeue(self.stock_chili)
+                self.stock_chili.dequeue()
 
         elif (product == 3):
             for x in range(aantal):
-                self.stock_shot_wit.dequeue(self.stock_shot_wit)
+                self.stock_shot_wit.dequeue()
 
         elif (product == 4):
             for x in range(aantal):
-                self.stock_shot_bruin.dequeue(self.stock_shot_bruin)
+                self.stock_shot_bruin.dequeue()
 
         elif (product == 5):
             for x in range(aantal):
-                self.stock_shot_zwart.dequeue(self.stock_shot_zwart)
+                self.stock_shot_zwart.dequeue()
 
         elif (product == 6):
             for x in range(aantal):
-                self.stock_shot_melk.dequeue(self.stock_shot_melk)
+                self.stock_shot_melk.dequeue()
 
     def controle_verval_datum(self, timestamp):
         """

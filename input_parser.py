@@ -23,25 +23,25 @@ def input_parser(filename):
             numbers = tempnumbers.split()
             if ("shot" in line):
                 if ("melk" in line):
-                    shop.stock.vul_stock_aan(0, int(numbers[0]))
+                    shop.vul_stock_aan(6,numbers[0], [numbers[1], numbers[2], numbers[3]])
 
                 elif ("wit" in line):
-                    shop.stock.vul_stock_aan(4, int(numbers[0]))
+                    shop.vul_stock_aan(3,numbers[0], [numbers[1], numbers[2], numbers[3]])
 
                 elif ("zwart" in line):
-                    shop.stock.vul_stock_aan(6, int(numbers[0]))
+                    shop.vul_stock_aan(5,numbers[0], [numbers[1], numbers[2], numbers[3]])
 
                 elif ("bruin" in line):
-                    shop.stock.vul_stock_aan(5, int(numbers[0]))
+                    shop.vul_stock_aan(4,numbers[0], [numbers[1], numbers[2], numbers[3]])
 
             elif ("honing" in line):
-                shop.stock.vul_stock_aan(1, int(numbers[0]))
+                shop.vul_stock_aan(0,numbers[0], [numbers[1], numbers[2], numbers[3]])
 
             elif ("marshmellow" in line):
-                shop.stock.vul_stock_aan(2, int(numbers[0]))
+                shop.vul_stock_aan(1,numbers[0], [numbers[1], numbers[2], numbers[3]])
 
             elif ("chili" in line):
-                shop.stock.vul_stock_aan(3, int(numbers[0]))
+                shop.vul_stock_aan(2,numbers[0], [numbers[1], numbers[2], numbers[3]])
 
             # vul werknemers en gebruikers aan
             elif ("werknemer" in line):
@@ -59,11 +59,4 @@ def input_parser(filename):
                 return
     return shop
 
-print(type(input_parser("input_bestand.txt")))
-
-
-#print(type(stock))
-
-
-
-#print(stock.print())
+input_parser("input_bestand.txt")
