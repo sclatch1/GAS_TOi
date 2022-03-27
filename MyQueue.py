@@ -1,9 +1,20 @@
-# linkbased
+#============================================================================
+# Name        : MyQueue.py
+# Author      : David Scalais
+# Copyright   : GAS - BA1 Informatica - David Scalais - University of Antwerp
+# Description : link-based Queue implementation in python
+#============================================================================
+
 class QueueItemType:
-    def __init__(self, value, next=None, previous=None):
+    def __init__(self, value):
 
         self.value = value
-        self.next = next
+        self.next = None
+
+class Pointer:
+    def __init__(self):
+
+        self.next = None
 
 class MyQueue:
     def __init__(self):
@@ -38,13 +49,14 @@ class MyQueue:
         :param newItem:
         :return: True
         """
-        if self.front == None:
-            newItem.next = self.front
-            self.front = newItem
-        else:
-            newItem.next = self.back
-            self.back = newItem
+        temp = QueueItemType(newItem)
 
+
+        if self.back == None:
+            self.front = self.back = temp
+            return True
+        self.back.next = temp
+        self.back = temp
         return True
     def dequeue(self):
         """
@@ -53,11 +65,13 @@ class MyQueue:
         postcondtie: eerst toegevoegde element wordt verwijdert
         :return: eerst toegevoegde element
         """
-        if self.front == None:
-            return False
+        if self.isEmpty():
+            return (None, False)
+
         else:
-            self.front = self.front.next
-            return self.front
+            temp = self.front
+            self.front = temp.next
+            return (temp.value, True)
     def getFront(self):
         """
         Plaatst de kop van een queue (d.i. het eerst toegevoegde element) in
@@ -66,6 +80,29 @@ class MyQueue:
         postconditie:
         :return: True
         """
+        if self.isEmpty():
+            return (None, False)
+        else:
+            queueFront = self.front.value
+            return (queueFront, True)
 
+    def save(self):
+        omgekeerd = []
+
+        current = self.front
+        while (current != self.back):
+            omgekeerd.append(current.value)
+            current = current.next
+        omgekeerd.append(self.back.value)
+        return omgekeerd[::-1]
+
+    def load(self, list):
+        while (self.isEmpty() == False):
+            self.dequeue()
+        self.back = None
+
+        test = list[::-1]
+        for item in test:
+                self.enqueue(item)
 
 
