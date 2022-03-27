@@ -1,9 +1,7 @@
-# thomas th maakt, daan test
 # ADT Honing
 ## data
 class Honing:
     def __init__(self, vervaldatum):
-        self.id = id # nog geen id toegekend
         self.prijs = 0,50 # prijs is bekend
         self.vervaldatum = vervaldatum # vervaldatum is onbekend
         self.credit = 1

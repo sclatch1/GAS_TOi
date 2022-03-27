@@ -1,49 +1,96 @@
-#david en thomas th maakt, thomas g test
 # ADT Bestelling
 ## data
+from arraybased_queue import MyQueue
+from Chocolademelk import Chocolademelk
+import Stocks
+
+
 class Bestelling:
-    def __init__(self,id_gebruiker):
-        self.id = None  # nog geen id toegekend
-        self.id_gebruiker = id_gebruiker  # email_adres in ADT Gebruiker
-        self.timestamp = None  # een timestamps met tijd en datum
-        self.id_chocolademelk = None  # id in ADT chocolademelk
-        self.bestellingen = dict()
+    def __init__(self):
+        self.bestellingen = MyQueue(100)
+        self.timestamps = dict()
 
     ### functionaliteit
-    def order(self, id_chocolademelk, afgehaald):
+    def order(self, tijdstip, tijd, ingredienten, email, stock: Stocks.Stocks):
         """
-        Houd bestellingen bij in een dictionary.
+        Houd bestellingen bij in een queue.
         preconditie: id_gebruiker en id_chocolademelk zijn strings, afgehaald een integer uit 0,1
         postconditie : bestelling wordt toegevoegd aan bestellingen
-        :param id_gebruiker: een unieke string die wordt toegekend aan een gebruiker
-        :param id_choclademelk: een unieke string die wordt toegekend aan een chocolademelk
-        :param afgehaald: een integer die laat zien of een bestelling is afgehaald of niet.
-        O = afgehaald
-        1 = niet afgehaald
-        :return: geeft een dictionary met bestellingen terug
+        :param tijdstip: een cijfer dat het tijdstip aanduid
+        :param tijd: de tijd die bij het tijdstip hoort
+        :param ingredienten: een array van ingredienten
+        :param email: email van de gebruiker
+        :param stock: de stock van de winkel
+        :return: geeft niks terug
         """
 
-        self.bestellingen[self.id_gebruiker] = [id_chocolademelk, afgehaald]
-        print(self.bestellingen)
-        return self.bestellingen
+        self.timestamps[tijdstip] = tijd
 
-    def annuleert_bestelling(self, id_gebruiker):
+        bestelling = Chocolademelk()
+
+        counter = 0
+        for y in ingredienten:
+            if y == "honing":
+                ingredienten[counter] = 0
+
+            elif y == "marshmallow":
+                ingredienten[counter] = 1
+
+            elif y == "chili":
+                ingredienten[counter] = 2
+
+            elif y == "wit":
+                ingredienten[counter] = 3
+
+            elif y == "bruin":
+                ingredienten[counter] = 4
+
+            elif y == "zwart":
+                ingredienten[counter] = 5
+
+            elif y == "melk":
+                ingredienten[counter] = 6
+
+            counter += 1
+
+        for x in ingredienten:
+            if x == 0:
+                bestelling.voeg_honing_toe()
+                stock.verlaag_stock(0, 1)
+
+            elif x == 1:
+                bestelling.voeg_marshmallow_toe()
+                stock.verlaag_stock(1, 1)
+
+            elif x == 2:
+                bestelling.voeg_chilipeper_toe()
+                stock.verlaag_stock(2, 1)
+
+            elif x == 3:
+                bestelling.voeg_chocolade_toe(0)
+                stock.verlaag_stock(3, 1)
+
+            elif x == 4:
+                bestelling.voeg_chocolade_toe(1)
+                stock.verlaag_stock(4, 1)
+
+            elif x == 5:
+                bestelling.voeg_chocolade_toe(2)
+                stock.verlaag_stock(5, 1)
+
+            elif x == 6:
+                bestelling.voeg_chocolade_toe(3)
+                stock.verlaag_stock(6, 1)
+
+        self.bestellingen.enqueue([tijdstip, email, bestelling])
+
+    def annuleert_bestelling(self, email):
         """
         annuleert bestelling van id_gebruiker en verwijdert uit de databank: "bestellingen".
         preconditie: id_gebruiker moet in databank "accounts" zijn en bestelling moet in databank "bestellingen zijn"
         postconditie: bestelling wordt verwijdert uit databank "bestellingen"
-        :param id_gebruiker: unieke string
-        :param id_chocolademelk: uinieke string
-        :param bestellingen: databank met bestellingen
+        :param email: unieke string
         :return: geeft niks terug
         """
-        self.bestellingen.pop(id_gebruiker)
-        print(self.bestellingen)
-        return self.bestellingen
 
-order1 = Bestelling("david")
-order2 = Bestelling("thomas")
-
-order1.order("donker",0)
-order2.order("melk",1)
-order1.annuleert_bestelling("david")
+        return

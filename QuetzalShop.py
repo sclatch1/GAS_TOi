@@ -1,21 +1,22 @@
-#thomas g en daan maakt, david test
 # ADT QuetzalShop
 ## data
 import Stocks
 import Werknemer
 import Gebruiker
+import generate_log
+from Bestelling import Bestelling
+
 
 class QuetzalShop:
     def __init__(self):
-        self.stock = Stocks.Stocks()                # stock klasse : product, aantal en vervaldatum
-        self.bestellingen = dict()                  # dictionary van bestellingen: bestelling en prijs
-        self.werknemers = Werknemer.werknemers()    # werknemers klasse: bewaard werknemers
-        self.gebruikers = Gebruiker.gebruikers()    # gebruiker klasse: bewaard gebruikers
+        self.stock = Stocks.Stocks()  # stock klasse : product, aantal en vervaldatum
+        self.bestellingen = Bestelling()  # dictionary van bestellingen: bestelling en prijs
+        self.werknemers = Werknemer.werknemers()  # werknemers klasse: bewaard werknemers
+        self.gebruikers = Gebruiker.gebruikers()  # gebruiker klasse: bewaard gebruikers
 
+    ### functionaliteit
 
-### functionaliteit
-
-    def werknemer(self,voornaam, achternaam, workload):
+    def werknemer(self, voornaam, achternaam, workload):
         """
         Houd een dictionary van informatie over een werknemer bij
         preconditie = id, voornaam, achternaam zijn strings
@@ -33,7 +34,7 @@ class QuetzalShop:
 
         self.werknemers.add_werknemer(voornaam, achternaam, workload)
 
-    def gebruiker(self,voornaam, achternaam, email):
+    def gebruiker(self, voornaam, achternaam, email):
         """
         Houd een dictionary van informatie over een gebruiker bij
         preconditie = email, voornaam, achternaam zijn strings
@@ -46,7 +47,7 @@ class QuetzalShop:
 
         self.gebruikers.voeg_gebruiker_toe(voornaam, achternaam, email)
 
-    def vul_stock_aan(self,product, aantal, vervaldatum):
+    def vul_stock_aan(self, product, aantal, vervaldatum):
         """
         vul stock aan met chocolademelk, wit chocolade shot, bruin chocolade shot, zwart chocolade shot, honing, marshmallow, chilipeper
         preconditie: een integer 0,1,2,3,4,5,6 voor product en een integer voor aantal
@@ -64,9 +65,9 @@ class QuetzalShop:
         :return: geeft niks terug
         """
 
-        self.stock.vul_stock_aan(product,aantal, vervaldatum)
+        self.stock.vul_stock_aan(product, aantal, vervaldatum)
 
-    def verlaag_stock(self,product, aantal):
+    def verlaag_stock(self, product, aantal):
         """
             verlaag stock aan met chocolademelk, wit chocolade shot, bruin chocolade shot, zwart chocolade shot, honing, marshmallow, chilipeper
             preconditie: een integer 0,1,2,3,4,5,6
@@ -86,76 +87,24 @@ class QuetzalShop:
 
         self.stock.verlaag_stock(product, aantal)
 
-    def voeg_chocolade_toe (self,chocoladeshot) :
-
+    def bestelling(self, tijdstip, tijd, ingredienten, email):
         """
-        voeg een chocoladeshot toe aan de chocolademelk
-        preconditie : chocoladeshot is een integer uit 0,1,2,3
-        postconditie : de prijs van de chocolademelk is verhoogd met 1 EUR
-        : param chocoladeshot : een integer die de kleur van de chocoladeshot
-         voorstelt :
-         0 = WIT
-         1 = MELK
-         2 = BRUIN
-         3 = ZWART
-        : return : geeft niets terug
+        voeg bestelling toe
+        preconditie: alle nodige variablen
+        postconditie: bestelling toegevoegd aan ADT
+        :return: geeft niks terug
         """
 
-        if self.chocoladeshot == 0 and "wit chocolade shot" in self.stock:
-            self.stock["wit chocolade shot"] += 1
-        else:
-            self.stock["wit chocolade shot"] = 1
-        if chocoladeshot == 1 and "melk chocolade shot" in self.stock:
-            self.stock["melk chocolade shot"] += 1
-        else:
-            self.stock["melk chocolade shot"] = 1
-        if chocoladeshot == 2 and "bruin chocolade shot" in self.stock:
-            self.stock["bruin chocolade shot"] += 1
-        else:
-            self.stock["bruin chocolade shot"] = 1
-        if chocoladeshot == 3 and "zwart chocolade shot" in self.stock:
-            self.stock["zwart chocolade shot"] += 1
-        else:
-            self.stock["zwart chocolade shot"] = 1
+        self.bestellingen.order(tijdstip, tijd, ingredienten, email, self.stock)
 
-    def voeg_honing_toe(self):
+    def output(self, name):
         """
-        voeg honing toe aan de chocolademelk
-        preconditie: geen preconditie
-        postconditie: de prijs van de chocolademelk is verhoogd met 0,50 EUR
-        :return: geeft niets terug
+        :return: output gegevens in html bestand
         """
+        log = generate_log.Output(self.bestellingen, name)
+        log.generate_html()
 
-        if "honing" in self.stock:
-            self.stock["honing"] += 1
-        else:
-            self.stock["honing"] = 1
-
-    def voeg_marshmallow_toe(self):
-        """
-        voeg marshmallow toe aan de chocolademelk
-        preconditie: geen preconditie
-        postconditie: de prijs van de chocolademelk is verhoogd met 0,75 EUR
-        :return: geeft niets terug
-        """
-        if "marshmallow" in self.stock:
-            self.stock["marshmallow"] += 1
-        else:
-            self.stock["marshmallow"] = 1
-
-    def voeg_chilipeper_toe(self):
-        """
-        voeg chilipeper toe aan de chocolademelk
-        preconditie: geen preconditie
-        postconditie: de prijs van de chocolademelk is verhoogd met 0,25 EUR
-        :return: geeft niets terug
-        """
-        if "chilipeper" in self.stock:
-            self.stock["chilipeper"] += 1
-        else:
-            self.stock["chilipeper"] = 1
-
-    def verwerkt_bestelling(self,bestelling, werknemer):
+    def verwerk_bestelling(self, bestelling, werknemer):
         """
         verwerkt een bestelling door een werknemer via credit systeem.
         voor verwerking wordt bestelling en werknemer voorgesteld als credit
@@ -166,7 +115,7 @@ class QuetzalShop:
         """
         pass
 
-    def verhoog_kassa(self,prijs_bestelling):
+    def verhoog_kassa(self, prijs_bestelling):
         """
         krijgt geld verschuldig van gebruiker voor bestelling
         preconditie: een integer
@@ -174,10 +123,9 @@ class QuetzalShop:
         :param prijs_bestelling: is een integer van de prijs
         :return: geeft niks terug
         """
-        del self.bestelling["bestelling"]
-        self.kassa += prijs_bestelling
+        pass
 
-    def verlaag_kassa(self,salaries,stocks):
+    def verlaag_kassa(self, salaries, stocks):
         """
         verlaag kassa met prijs van stockaanvulling en salaries toegekend.
         preconditie: genoeg geld in kassa
@@ -188,7 +136,7 @@ class QuetzalShop:
         """
         pass
 
-    def betaalt_salaries(self,werknemer, salaries):
+    def betaalt_salaries(self, werknemer, salaries):
         """
         werknemers ontvangen salaries
         preconditie: salaries is een integer

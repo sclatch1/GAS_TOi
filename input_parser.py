@@ -1,6 +1,5 @@
 from QuetzalShop import QuetzalShop
 
-
 # Leest text bestand en doet wat er staat
 def input_parser(filename):
     # variablen
@@ -54,11 +53,19 @@ def input_parser(filename):
 
             # bestellingen
             elif ("bestel" in line):
-                return
+                tempnumbers = ''.join([i for i in line if not i.isalpha()])  # extract numbers
+                tempwords = ''.join([i for i in line if not i.isdigit()])  # extract words
+                numbers = tempnumbers.split()
+                words = tempwords.split()
+                email = words[0]
+                words.remove(words[0])
+                shop.bestelling(numbers[0], [numbers[1],numbers[2],numbers[3],numbers[4], numbers[5]], words, email)
 
             # genereer output
             if ("log" in line):
-                return
+                words = line.split()
+                shop.output(words[0])
+
     return shop
 
 input_parser("input_bestand.txt")
