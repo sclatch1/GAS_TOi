@@ -1,6 +1,7 @@
 # ADT Bestelling
 ## data
 from arraybased_queue import MyQueue
+#from MyQueue import MyQueue
 from Chocolademelk import Chocolademelk
 import Stocks
 

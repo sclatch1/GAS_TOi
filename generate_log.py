@@ -4,7 +4,7 @@ from Werknemer import werknemers
 
 
 class Output:
-    def __init__(self, bestelling: Bestelling, stock: Stocks, werknemers: werknemers, naam):
+    def __init__(self, bestelling: Bestelling, stock: Stocks, werknemers: werknemers,naam):
         self.lijst = ["tijdstip", "stack", "naam", "Nieuwe bestellingen", "Wachtende bestellingen", "wit", "melk",
                       "zwart", "honing", "marshmallow", "chili"]
         self.tijdstip_1 = [0]
@@ -15,15 +15,20 @@ class Output:
         self.bestellingen = bestelling
         self.werknemers = werknemers
         self.stock = stock
-        self.naam = naam
+        self.name = naam
 
 
     def generate_data(self):
         data = []
         self.bestellingen.bestellingen.save()
-        for i in range(5):
-            data += self.bestellingen.bestellingen.save
-        print(data)
+        self.stock.stock_shot_wit
+        data += self.bestellingen.bestellingen.save()
+        for element in data:
+            if element[0] == 2:
+                self.tijdstip_1 += "hey"
+        print(data,"test")
+        print(self.tijdstip_1)
+    #
 
 
 
@@ -45,10 +50,22 @@ class Output:
             rij += "<TD>" + str(element) + "</TD>"
         rij += "</TR>"
         output += rij
+        for element in self.tijdstip_2:
+            rij += "<TD>" + str(element) + "</TD>"
+        rij += "</TR>"
+        output += rij
+        for element in self.tijdstip_3:
+            rij += "<TD>" + str(element) + "</TD>"
+        rij += "</TR>"
+        output += rij
+        for element in self.tijdstip_4:
+            rij += "<TD>" + str(element) + "</TD>"
+        rij += "</TR>"
+        output += rij
 
 
         # tabel eindigt hier
         output += "</table> </html>"
-        hs = open( "log" + self.naam + ".html", 'w')
+        hs = open( "log" + self.name + ".html", 'w')
         hs.write(output)
 
