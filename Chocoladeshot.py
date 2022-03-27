@@ -3,15 +3,19 @@
 ## data
 
 class Chocoladeshot:
-    def __init__(self):
+    def __init__(self, soort, vervaldatum):
         #soorten chocolade
-        self.wit = 0 # nog geen id toegekend
-        self.melk = 1
-        self.bruin = 2
-        self.zwart = 3
+        if (soort == 0):
+            self.soort = "wit"
+        if (soort == 1):
+            self.soort = "bruin"
+        if (soort == 2):
+            self.soort = "zwart"
+        if (soort == 3):
+            self.soort = "melk"
 
         self.prijs = 1 # prijs is bekend
-        self.vervaldatum = None # vervaldatum is onbekend
+        self.vervaldatum = vervaldatum # vervaldatum is onbekend
         self.credit = 1
 
 ### functionaliteit

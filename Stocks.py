@@ -50,31 +50,31 @@ class Stocks:
 
         if (product == 0):
             for x in range(int(aantal)):
-                self.stock_honing.enqueue(vervaldatum)
+                self.stock_honing.enqueue(Honing(vervaldatum))
 
         elif (product == 1):
             for x in range(int(aantal)):
-                self.stock_marshmellow.enqueue(vervaldatum)
+                self.stock_marshmellow.enqueue(Marshmallow(vervaldatum))
 
         elif (product == 2):
             for x in range(int(aantal)):
-                self.stock_chili.enqueue(vervaldatum)
+                self.stock_chili.enqueue(Chilipeper(vervaldatum))
 
         elif (product == 3):
             for x in range(int(aantal)):
-                self.stock_shot_wit.enqueue(vervaldatum)
+                self.stock_shot_wit.enqueue(Chocoladeshot(0, vervaldatum))
 
         elif (product == 4):
             for x in range(int(aantal)):
-                self.stock_shot_bruin.enqueue(vervaldatum)
+                self.stock_shot_bruin.enqueue(Chocoladeshot(1, vervaldatum))
 
         elif (product == 5):
             for x in range(int(aantal)):
-                self.stock_shot_zwart.enqueue(vervaldatum)
+                self.stock_shot_zwart.enqueue(Chocoladeshot(2, vervaldatum))
 
         elif (product == 6):
             for x in range(int(aantal)):
-                self.stock_shot_melk.enqueue(vervaldatum)
+                self.stock_shot_melk.enqueue(Chocoladeshot(3, vervaldatum))
 
     def verlaag_stock(self, product, aantal):
         """
@@ -131,25 +131,25 @@ class Stocks:
         :return: geeft niks terug
         """
 
-        while (days_calculator(self.stock_honing.getFront(), timestamp) < 0):
+        while days_calculator(self.stock_honing.getFront().vervaldatum, timestamp) < 0:
             self.stock_honing.dequeue(self.stock_honing)
 
-        while (days_calculator(self.stock_marshmellow.getFront(), timestamp) < 0):
+        while days_calculator(self.stock_marshmellow.getFront().vervaldatum, timestamp) < 0:
             self.stock_marshmellow.dequeue(self.stock_marshmellow)
 
-        while (days_calculator(self.stock_chili.getFront(), timestamp) < 0):
+        while days_calculator(self.stock_chili.getFront().vervaldatum, timestamp) < 0:
             self.stock_chili.dequeue(self.stock_chili)
 
-        while (days_calculator(self.stock_shot_wit.getFront(), timestamp) < 0):
+        while days_calculator(self.stock_shot_wit.getFront().vervaldatum, timestamp) < 0:
             self.stock_shot_wit.dequeue(self.stock_shot_wit)
 
-        while (days_calculator(self.stock_shot_bruin.getFront(), timestamp) < 0):
+        while days_calculator(self.stock_shot_bruin.getFront().vervaldatum, timestamp) < 0:
             self.stock_shot_bruin.dequeue(self.stock_shot_bruin)
 
-        while (days_calculator(self.stock_shot_zwart.getFront(), timestamp) < 0):
+        while days_calculator(self.stock_shot_zwart.getFront().vervaldatum, timestamp) < 0:
             self.stock_shot_zwart.dequeue(self.stock_shot_zwart)
 
-        while (days_calculator(self.stock_shot_melk.getFront(), timestamp) < 0):
+        while days_calculator(self.stock_shot_melk.getFront().vervaldatum, timestamp) < 0:
             self.stock_shot_melk.dequeue(self.stock_shot_melk)
 
 
