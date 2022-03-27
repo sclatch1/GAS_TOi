@@ -1,8 +1,8 @@
-from Bestelling import Bestelling
-from QuetzalShop import QuetzalShop
+
+
 
 class Output:
-    def __init__(self, bestellingen: Bestelling, name):
+    def __init__(self, bestelling, stock, werknemers):
         self.lijst = ["tijdstip", "stack", "naam", "Nieuwe bestellingen", "Wachtende bestellingen", "wit", "melk",
                       "zwart", "honing", "marshmallow", "chili"]
         self.tijdstip_1 = [0]
@@ -10,8 +10,15 @@ class Output:
         self.tijdstip_3 = [2]
         self.tijdstip_4 = [3]
         self.tijdstip_5 = [4]
-        self.bestellingen = bestellingen
-        self.name = name
+        self.bestellingen = bestelling
+        self.werknemers = werknemers
+        self.stock = stock
+
+
+    def generate_data(self):
+        data = []
+        for element in self.stock:
+            print("test")
 
     def generate_html(self):
         output = "<html>" + "<h1>Log</h1>"
@@ -26,13 +33,16 @@ class Output:
         output += rij
 
         # rijen met data
+        rij = "<TR>"
         for element in self.tijdstip_1:
-            rij += "<TD>" + item + "</TD>"
+            rij += "<TD>" + str(element) + "</TD>"
         rij += "</TR>"
         output += rij
 
+
         # tabel eindigt hier
         output += "</table> </html>"
-        hs = open("log" + self.name + ".html", 'w')
+        hs = open( "log4" + ".html", 'w')
         hs.write(output)
+
 
