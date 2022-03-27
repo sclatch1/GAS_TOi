@@ -83,14 +83,3 @@ class Bestelling:
                 stock.verlaag_stock(6, 1)
 
         self.bestellingen.enqueue([tijdstip, email, bestelling])
-
-    def annuleert_bestelling(self, email):
-        """
-        annuleert bestelling van id_gebruiker en verwijdert uit de databank: "bestellingen".
-        preconditie: id_gebruiker moet in databank "accounts" zijn en bestelling moet in databank "bestellingen zijn"
-        postconditie: bestelling wordt verwijdert uit databank "bestellingen"
-        :param email: unieke string
-        :return: geeft niks terug
-        """
-
-        return
