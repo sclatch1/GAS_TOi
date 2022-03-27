@@ -1,24 +1,32 @@
 #Queue tabel linked based
-#from arraybased_queue import MyQueue
+
+#============================================================================
+# Name        : QueueTabel.py
+# Author      : David Scalais
+# Copyright   : GAS - BA1 Informatica - David Scalais - University of Antwerp
+# Description : link-based QueueTabel implementation in python
+#============================================================================
+
+
 from MyQueue import MyQueue
 
 class QueueTabel:
     def __init__(self):
         self.myQueue = MyQueue()
 
-    def isEmpty(self):
+    def TableIsEmpty(self):
         self.myQueue.isEmpty()
 
-    def enqueu(self,item):
+    def TableEnqueu(self,item):
         self.myQueue.enqueue(item)
 
-    def getFront(self):
+    def TableGetFront(self):
         self.myQueue.getFront()
 
-    def save(self):
+    def TableSave(self):
         self.myQueue.save()
 
-    def load(self,list):
+    def TableLoad(self,list):
         self.myQueue.load(list)
 
 
