@@ -57,7 +57,7 @@ def input_parser(filename):
 
             # genereer output
             if ("log" in line):
-                return
+                shop.output()
 
     return shop
 

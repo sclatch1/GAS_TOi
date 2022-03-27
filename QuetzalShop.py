@@ -12,6 +12,7 @@ class QuetzalShop:
         self.bestellingen = dict()                  # dictionary van bestellingen: bestelling en prijs
         self.werknemers = Werknemer.werknemers()    # werknemers klasse: bewaard werknemers
         self.gebruikers = Gebruiker.gebruikers()    # gebruiker klasse: bewaard gebruikers
+        self.timestamp = dict                       # timestamps met tijd en datum (key is 1, 2, ...)
 
 
 ### functionaliteit
@@ -119,44 +120,7 @@ class QuetzalShop:
         else:
             self.stock["zwart chocolade shot"] = 1
 
-    def voeg_honing_toe(self):
-        """
-        voeg honing toe aan de chocolademelk
-        preconditie: geen preconditie
-        postconditie: de prijs van de chocolademelk is verhoogd met 0,50 EUR
-        :return: geeft niets terug
-        """
-
-        if "honing" in self.stock:
-            self.stock["honing"] += 1
-        else:
-            self.stock["honing"] = 1
-
-    def voeg_marshmallow_toe(self):
-        """
-        voeg marshmallow toe aan de chocolademelk
-        preconditie: geen preconditie
-        postconditie: de prijs van de chocolademelk is verhoogd met 0,75 EUR
-        :return: geeft niets terug
-        """
-        if "marshmallow" in self.stock:
-            self.stock["marshmallow"] += 1
-        else:
-            self.stock["marshmallow"] = 1
-
-    def voeg_chilipeper_toe(self):
-        """
-        voeg chilipeper toe aan de chocolademelk
-        preconditie: geen preconditie
-        postconditie: de prijs van de chocolademelk is verhoogd met 0,25 EUR
-        :return: geeft niets terug
-        """
-        if "chilipeper" in self.stock:
-            self.stock["chilipeper"] += 1
-        else:
-            self.stock["chilipeper"] = 1
-
-    def verwerkt_bestelling(self,bestelling, werknemer):
+    def verwerk_bestelling(self, bestelling, werknemer):
         """
         verwerkt een bestelling door een werknemer via credit systeem.
         voor verwerking wordt bestelling en werknemer voorgesteld als credit

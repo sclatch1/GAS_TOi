@@ -3,10 +3,6 @@
 ## data
 class Bestelling:
     def __init__(self,id_gebruiker):
-        self.id = None  # nog geen id toegekend
-        self.id_gebruiker = id_gebruiker  # email_adres in ADT Gebruiker
-        self.timestamp = None  # een timestamps met tijd en datum
-        self.id_chocolademelk = None  # id in ADT chocolademelk
         self.bestellingen = dict()
 
     ### functionaliteit
