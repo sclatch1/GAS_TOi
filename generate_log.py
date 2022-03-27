@@ -20,8 +20,12 @@ class Output:
 
     def generate_data(self):
         data = self.bestellingen.bestellingen.save()
+        for element in data:
+            if element[0] == 1:
+                self.tijdstip_1 += "hey"
+        print(self.tijdstip_1,"test")
         print(data)
-    #
+    #)
 
 
 

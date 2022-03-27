@@ -105,5 +105,5 @@ class QuetzalShop:
         log.generate_html()
         log.generate_data()
 
-#shop = QuetzalShop()
-#shop.output("4")
+shop = QuetzalShop()
+shop.output("4")
