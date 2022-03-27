@@ -12,7 +12,6 @@ class QuetzalShop:
         self.bestellingen = dict()                  # dictionary van bestellingen: bestelling en prijs
         self.werknemers = Werknemer.werknemers()    # werknemers klasse: bewaard werknemers
         self.gebruikers = Gebruiker.gebruikers()    # gebruiker klasse: bewaard gebruikers
-        self.timestamp = dict                       # timestamps met tijd en datum (key is 1, 2, ...)
 
 
 ### functionaliteit
