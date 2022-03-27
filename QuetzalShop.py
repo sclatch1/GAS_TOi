@@ -5,11 +5,13 @@ import Stocks
 import Werknemer
 import Gebruiker
 import generate_log
+from Bestelling import Bestelling
+
 
 class QuetzalShop:
     def __init__(self):
         self.stock = Stocks.Stocks()                # stock klasse : product, aantal en vervaldatum
-        self.bestellingen = dict()                  # dictionary van bestellingen: bestelling en prijs
+        self.bestellingen = Bestelling()                  # dictionary van bestellingen: bestelling en prijs
         self.werknemers = Werknemer.werknemers()    # werknemers klasse: bewaard werknemers
         self.gebruikers = Gebruiker.gebruikers()    # gebruiker klasse: bewaard gebruikers
 
@@ -162,6 +164,16 @@ class QuetzalShop:
         :return: geeft niks terug
         """
         pass
+
+    def bestelling(self, tijdstip, tijd, ingredienten, email):
+        """
+        voeg bestelling toe
+        preconditie: alle nodige variablen
+        postconditie: bestelling toegevoegd aan ADT
+        :return: geeft niks terug
+        """
+
+        self.bestellingen.order(tijdstip,tijd,ingredienten,email)
 
     def output(self):
         """
