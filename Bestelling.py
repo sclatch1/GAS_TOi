@@ -1,4 +1,3 @@
-# david en thomas th maakt, thomas g test
 # ADT Bestelling
 ## data
 from arraybased_queue import MyQueue
@@ -28,6 +27,31 @@ class Bestelling:
         self.timestamps[tijdstip] = tijd
 
         bestelling = Chocolademelk()
+
+        counter = 0
+        for y in ingredienten:
+            if y == "honing":
+                ingredienten[counter] = 0
+
+            elif y == "marshmallow":
+                ingredienten[counter] = 1
+
+            elif y == "chili":
+                ingredienten[counter] = 2
+
+            elif y == "wit":
+                ingredienten[counter] = 3
+
+            elif y == "bruin":
+                ingredienten[counter] = 4
+
+            elif y == "zwart":
+                ingredienten[counter] = 5
+
+            elif y == "melk":
+                ingredienten[counter] = 6
+
+            counter += 1
 
         for x in ingredienten:
             if x == 0:
