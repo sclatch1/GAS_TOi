@@ -1,8 +1,12 @@
+from input_parser import input_parser
+
+shop = input_parser("input_bestand.txt")
+shop.stock.
 
 class Output:
     def __init__(self):
         self.lijst = ["tijdstip","stack","naam","Nieuwe bestellingen","Wachtende bestellingen","wit","melk","zwart","honing","marshmallow","chili"]
-        self.tijdstip_1 = []
+        self.wit= shop.stock.stock_shot_wit.
         self.tijdstip_2 = []
         self.tijdstip_3 = []
         self.tijdstip_4 = []
