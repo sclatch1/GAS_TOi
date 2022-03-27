@@ -22,7 +22,6 @@ class QuetzalShop:
         preconditie = id, voornaam, achternaam zijn strings
         workload een integer van 3 of 10
         postconditie = informatie werknemer wordt toegevoegs aan info_werknemer
-        :param id: een unieke id van de werknemer
         :param voornaam: voornaam van werknemer
         :param achternaam: achternaam van werknemer
         :param workload: een integer van 10 of 3 die workload van
@@ -97,11 +96,11 @@ class QuetzalShop:
 
         self.bestellingen.order(tijdstip, tijd, ingredienten, email, self.stock)
 
-    def output(self):
+    def output(self, naam):
         """
         :return: output gegevens in html bestand
         """
-        log = Output(self.bestellingen,self.stock,self.werknemers)
+        log = Output(self.bestellingen,self.stock,self.werknemers, naam)
         log.generate_html()
         log.generate_data()
 

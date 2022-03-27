@@ -4,7 +4,7 @@ from Werknemer import werknemers
 
 
 class Output:
-    def __init__(self, bestelling: Bestelling, stock: Stocks, werknemers: werknemers):
+    def __init__(self, bestelling: Bestelling, stock: Stocks, werknemers: werknemers, naam):
         self.lijst = ["tijdstip", "stack", "naam", "Nieuwe bestellingen", "Wachtende bestellingen", "wit", "melk",
                       "zwart", "honing", "marshmallow", "chili"]
         self.tijdstip_1 = [0]
@@ -15,6 +15,7 @@ class Output:
         self.bestellingen = bestelling
         self.werknemers = werknemers
         self.stock = stock
+        self.naam = naam
 
 
     def generate_data(self):
@@ -48,6 +49,6 @@ class Output:
 
         # tabel eindigt hier
         output += "</table> </html>"
-        hs = open( "log4" + ".html", 'w')
+        hs = open( "log4" + self.naam + ".html", 'w')
         hs.write(output)
 
