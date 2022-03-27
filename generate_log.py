@@ -1,15 +1,15 @@
 from Bestelling import Bestelling
+from QuetzalShop import QuetzalShop
 
 class Output:
     def __init__(self, bestellingen: Bestelling, name):
         self.lijst = ["tijdstip", "stack", "naam", "Nieuwe bestellingen", "Wachtende bestellingen", "wit", "melk",
                       "zwart", "honing", "marshmallow", "chili"]
-        self.tijdstip_1 = []
-        self.tijdstip_2 = []
-        self.tijdstip_3 = []
-        self.tijdstip_4 = []
-        self.tijdstip_5 = []
-        self.tijdstip_6 = []
+        self.tijdstip_1 = [0]
+        self.tijdstip_2 = [1]
+        self.tijdstip_3 = [2]
+        self.tijdstip_4 = [3]
+        self.tijdstip_5 = [4]
         self.bestellingen = bestellingen
         self.name = name
 
@@ -26,12 +26,10 @@ class Output:
         output += rij
 
         # rijen met data
-        for x in range(len(self.bestellingen.timestamps)):
-            tweederij = "<TR>"
-            for item in self.lijst:
-                tweederij += "<TD>" + item + "</TD>"
-            tweederij += "</TR>"
-            output += tweederij
+        for element in self.tijdstip_1:
+            rij += "<TD>" + item + "</TD>"
+        rij += "</TR>"
+        output += rij
 
         # tabel eindigt hier
         output += "</table> </html>"
