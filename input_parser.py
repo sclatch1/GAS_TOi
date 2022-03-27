@@ -14,11 +14,13 @@ def input_parser(filename):
         if (line[0] != "#"):  # lijnen met '#' worden genegeerd
 
             # initialiseer QuetzalShop
-            if (line == "init"):
+            if (line == "init\n"):
+                print("init")
                 mode = 0
 
             # start
-            if (line == "start"):
+            if (line == "start\n"):
+                print("start")
                 mode = 1
 
             if mode == 0:
@@ -56,7 +58,7 @@ def input_parser(filename):
                     words = line.split()
                     shop.gebruiker(words[1], words[2], words[3])
 
-            if mode == 1:
+            elif mode == 1:
                 # bestellingen
                 if ("bestel" in line):
                     tempnumbers = ''.join([i for i in line if not i.isalpha()])  # extract numbers
@@ -71,6 +73,41 @@ def input_parser(filename):
                 elif ("log" in line):
                     words = line.split()
                     shop.output(words[0])
+
+                # extra stock toevoegingen
+                else:
+                    tempnumbers = ''.join([i for i in line if not i.isalpha()])  # extract numbers
+                    numbers = tempnumbers.split()
+                    if ("shot" in line):
+                        if ("melk" in line):
+                            shop.vul_stock_aan(6, numbers[0], [numbers[1], numbers[2], numbers[3]])
+
+                        elif ("wit" in line):
+                            shop.vul_stock_aan(3, numbers[0], [numbers[1], numbers[2], numbers[3]])
+
+                        elif ("zwart" in line):
+                            shop.vul_stock_aan(5, numbers[0], [numbers[1], numbers[2], numbers[3]])
+
+                        elif ("bruin" in line):
+                            shop.vul_stock_aan(4, numbers[0], [numbers[1], numbers[2], numbers[3]])
+
+                    elif ("honing" in line):
+                        shop.vul_stock_aan(0, numbers[0], [numbers[1], numbers[2], numbers[3]])
+
+                    elif ("marshmellow" in line):
+                        shop.vul_stock_aan(1, numbers[0], [numbers[1], numbers[2], numbers[3]])
+
+                    elif ("chili" in line):
+                        shop.vul_stock_aan(2, numbers[0], [numbers[1], numbers[2], numbers[3]])
+
+                    # vul werknemers en gebruikers aan
+                    elif ("werknemer" in line):
+                        words = line.split()
+                        shop.werknemer(words[1], words[2], words[3])
+
+                    elif ("gebruiker" in line):
+                        words = line.split()
+                        shop.gebruiker(words[1], words[2], words[3])
 
     return shop
 
