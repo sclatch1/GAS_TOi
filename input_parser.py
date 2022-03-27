@@ -45,10 +45,12 @@ def input_parser(filename):
 
             # vul werknemers en gebruikers aan
             elif ("werknemer" in line):
-                return
+                words = line.split()
+                shop.werknemer(words[1], words[2], words[3])
 
             elif ("gebruiker" in line):
-                return
+                words = line.split()
+                shop.gebruiker(words[1], words[2], words[3])
 
             # bestellingen
             elif ("bestel" in line):

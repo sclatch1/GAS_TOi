@@ -2,18 +2,13 @@
 ## functionaliteit
 
 from binary_search_tree import BST
-werknemers = BST()
-class werknemer():
+class werknemers():
 
-    def __init__(self,voornaam,achternaam,workload):
-        self.voornaam = voornaam # nog geen id toegekend
-        self.achternaam = achternaam # prijs is bekend
-        self.workload = workload # vervaldatum is onbekend
+    def __init__(self):
+        self.werknemers = BST()
 
     def add_werknemer(self,voornaam, achternaam, workload):
 
-        werknemers.searchTreeInsert([achternaam,[voornaam,workload]])
-        werknemers.inorderTraverse(print)
         """
         voeg een werknemer toe aan de ADT indien deze nog niet bestaat
 
@@ -29,7 +24,7 @@ class werknemer():
         : return : geeft niets terug
         """
 
-        #pass
+        self.werknemers.searchTreeInsert([voornaam + " " + achternaam, workload])
 
     def verwijder_werknemer(self,voornaam, achternaam):
         """
@@ -45,9 +40,5 @@ class werknemer():
         : return : geeft niets terug
         """
 
-
-        pass
-
-w1 = werknemer("david","scalais",3)
-w1.add_werknemer("david","scalais",3)
+        self.werknemers.searchTreeDelete(voornaam + " " + achternaam)
 

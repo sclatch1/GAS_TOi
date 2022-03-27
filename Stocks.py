@@ -1,10 +1,10 @@
 # thomas g en david maakt, daan test
 # ADT Stocks
 ## data
-import Chilipeper
-import Chocoladeshot
-import Marshmallow
-import Honing
+from Chilipeper import Chilipeper
+from Chocoladeshot import Chocoladeshot
+from Marshmallow import Marshmallow
+from Honing import Honing
 import arraybased_queue
 from datetime import date
 
@@ -132,25 +132,25 @@ class Stocks:
         """
 
         while days_calculator(self.stock_honing.getFront().vervaldatum, timestamp) < 0:
-            self.stock_honing.dequeue(self.stock_honing)
+            self.stock_honing.dequeue()
 
         while days_calculator(self.stock_marshmellow.getFront().vervaldatum, timestamp) < 0:
-            self.stock_marshmellow.dequeue(self.stock_marshmellow)
+            self.stock_marshmellow.dequeue()
 
         while days_calculator(self.stock_chili.getFront().vervaldatum, timestamp) < 0:
-            self.stock_chili.dequeue(self.stock_chili)
+            self.stock_chili.dequeue()
 
         while days_calculator(self.stock_shot_wit.getFront().vervaldatum, timestamp) < 0:
-            self.stock_shot_wit.dequeue(self.stock_shot_wit)
+            self.stock_shot_wit.dequeue()
 
         while days_calculator(self.stock_shot_bruin.getFront().vervaldatum, timestamp) < 0:
-            self.stock_shot_bruin.dequeue(self.stock_shot_bruin)
+            self.stock_shot_bruin.dequeue()
 
         while days_calculator(self.stock_shot_zwart.getFront().vervaldatum, timestamp) < 0:
-            self.stock_shot_zwart.dequeue(self.stock_shot_zwart)
+            self.stock_shot_zwart.dequeue()
 
         while days_calculator(self.stock_shot_melk.getFront().vervaldatum, timestamp) < 0:
-            self.stock_shot_melk.dequeue(self.stock_shot_melk)
+            self.stock_shot_melk.dequeue()
 
 
     def print(self):

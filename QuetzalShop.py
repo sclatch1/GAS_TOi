@@ -1,17 +1,21 @@
 #thomas g en daan maakt, david test
 # ADT QuetzalShop
 ## data
-from Stocks import Stocks
+import Stocks
+import Werknemer
+import Gebruiker
 
 class QuetzalShop:
     def __init__(self):
-        self.stock = Stocks()         # dictionary van de stock: product en aantal
-        self.bestellingen = dict()   # dictionary van bestellingen: bestelling en prijs
-        self.kassa = 0               # het geld in de kassa
-        pass
+        self.stock = Stocks.Stocks()                # stock klasse : product, aantal en vervaldatum
+        self.bestellingen = dict()                  # dictionary van bestellingen: bestelling en prijs
+        self.werknemers = Werknemer.werknemers()    # werknemers klasse: bewaard werknemers
+        self.gebruikers = Gebruiker.gebruikers()    # gebruiker klasse: bewaard gebruikers
+
+
 ### functionaliteit
 
-    def werknemer(self,id, voornaam, achternaam, workload):
+    def werknemer(self,voornaam, achternaam, workload):
         """
         Houd een dictionary van informatie over een werknemer bij
         preconditie = id, voornaam, achternaam zijn strings
@@ -26,7 +30,21 @@ class QuetzalShop:
         3 = 3 credits/tijdseenheid -> student werknemer
         :return: geeft niks terug
         """
-        pass
+
+        self.werknemers.add_werknemer(voornaam, achternaam, workload)
+
+    def gebruiker(self,voornaam, achternaam, email):
+        """
+        Houd een dictionary van informatie over een gebruiker bij
+        preconditie = email, voornaam, achternaam zijn strings
+        postconditie = informatie gebruiker wordt toegevoegs aan de ADT
+        :param voornaam: voornaam van gebruiker
+        :param achternaam: achternaam van gebruiker
+        :param email: email van gebruiker
+        :return: geeft niks terug
+        """
+
+        self.gebruikers.voeg_gebruiker_toe(voornaam, achternaam, email)
 
     def vul_stock_aan(self,product, aantal, vervaldatum):
         """
