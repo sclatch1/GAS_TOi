@@ -3,7 +3,7 @@
 import Stocks
 import Werknemer
 import Gebruiker
-import generate_log
+from generate_log import Output
 from Bestelling import Bestelling
 
 
@@ -97,11 +97,11 @@ class QuetzalShop:
 
         self.bestellingen.order(tijdstip, tijd, ingredienten, email, self.stock)
 
-    def output(self, name):
+    def output(self):
         """
         :return: output gegevens in html bestand
         """
-        log = generate_log.Output(self.bestellingen, name)
+        log = Output(self.bestellingen,self.stock,self.werknemers)
         log.generate_html()
 
     def verwerk_bestelling(self, bestelling, werknemer):
@@ -146,3 +146,6 @@ class QuetzalShop:
         :return: geeft niks terug
         """
         pass
+
+shop = QuetzalShop()
+shop.output()
