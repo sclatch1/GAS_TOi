@@ -1,8 +1,9 @@
-
-
+from Stocks import Stocks
+from Bestelling import Bestelling
+from Werknemer import werknemers
 
 class Output:
-    def __init__(self, bestelling, stock, werknemers):
+    def __init__(self, bestelling: Bestelling, stock: Stocks, werknemers: werknemers):
         self.lijst = ["tijdstip", "stack", "naam", "Nieuwe bestellingen", "Wachtende bestellingen", "wit", "melk",
                       "zwart", "honing", "marshmallow", "chili"]
         self.tijdstip_1 = [0]
@@ -17,7 +18,7 @@ class Output:
 
     def generate_data(self):
         data = []
-        for element in self.stock:
+        for element in self.stock.
             print("test")
 
     def generate_html(self):
