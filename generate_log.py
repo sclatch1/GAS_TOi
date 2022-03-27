@@ -1,6 +1,6 @@
 
 class Output:
-    def __init__(self):
+    def __init__(self, shop):
         self.lijst = ["tijdstip","stack","naam","Nieuwe bestellingen","Wachtende bestellingen","wit","melk","zwart","honing","marshmallow","chili"]
         self.tijdstip_1 = []
         self.tijdstip_2 = []
@@ -8,6 +8,7 @@ class Output:
         self.tijdstip_4 = []
         self.tijdstip_5 = []
         self.tijdstip_6 = []
+        self.shop = shop
 
     def generate_html(self):
         output = "<html>" + "<h1>Log</h1>"

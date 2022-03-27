@@ -1,6 +1,5 @@
 from QuetzalShop import QuetzalShop
 
-
 # Leest text bestand en doet wat er staat
 def input_parser(filename):
     # variablen
@@ -59,6 +58,7 @@ def input_parser(filename):
             # genereer output
             if ("log" in line):
                 return
+
     return shop
 
 input_parser("input_bestand.txt")

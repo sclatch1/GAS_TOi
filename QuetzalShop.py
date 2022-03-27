@@ -4,6 +4,7 @@
 import Stocks
 import Werknemer
 import Gebruiker
+import generate_log
 
 class QuetzalShop:
     def __init__(self):
@@ -198,3 +199,10 @@ class QuetzalShop:
         :return: geeft niks terug
         """
         pass
+
+    def output(self):
+        """
+        :return: output gegevens in html bestand
+        """
+        log = generate_log.Output(self)
+        log.generate_html()
