@@ -4,15 +4,15 @@
 # Name        : QueueTabel.py
 # Author      : David Scalais
 # Copyright   : GAS - BA1 Informatica - David Scalais - University of Antwerp
-# Description : link-based QueueTabel implementation in python
+# Description : array-based QueueTabel implementation in python
 #============================================================================
 
 
-from MyQueue import MyQueue
+from arraybased_queue import MyQueue
 
 class QueueTabel:
-    def __init__(self):
-        self.myQueue = MyQueue()
+    def __init__(self,max_size):
+        self.myQueue = MyQueue(max_size)
 
     def TableIsEmpty(self):
         self.myQueue.isEmpty()

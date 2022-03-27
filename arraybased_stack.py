@@ -6,6 +6,7 @@
 # Description : Arraybased stack implementation in python
 #============================================================================
 
+
 class MyStack():
     def __init__(self, max_size):
         self.a = [None] * max_size

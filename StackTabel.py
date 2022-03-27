@@ -4,11 +4,11 @@
 # Copyright   : GAS - BA1 Informatica - David Scalais - University of Antwerp
 # Description : array-based StackTabel implementation in python
 #============================================================================
-from MyStack import MyStack
+from arraybased_stack import MyStack
 
 class StackTabel:
-    def __init__(self):
-        self.stack = MyStack()
+    def __init__(self,max_size):
+        self.stack = MyStack(max_size)
 
     def TabelIsEmpty(self):
         self.stack.isEmpty()
