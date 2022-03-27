@@ -49,6 +49,6 @@ class Output:
 
         # tabel eindigt hier
         output += "</table> </html>"
-        hs = open( "log4" + self.naam + ".html", 'w')
+        hs = open( "log" + self.naam + ".html", 'w')
         hs.write(output)
 
