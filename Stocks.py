@@ -154,8 +154,4 @@ class Stocks:
 
 
     def print(self):
-        output = " chocolademelk: " + str(self.chocolademelk[1]) + " honing: " + str(self.honing[1]) + " chili: " + str(
-            self.chilipeper[1]) + " marshmallow: " + str(self.marshmallows[1]) + " wit: " + str(
-            self.wit_chocolade_shot[1])
-        output += " zwart: " + str(self.zwart_chocolade_shot[1]) + " bruin: " + str(self.bruin_chocolade_shot[1])
-        return output
+        return
