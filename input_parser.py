@@ -63,7 +63,8 @@ def input_parser(filename):
 
             # genereer output
             if ("log" in line):
-                shop.output()
+                words = line.split()
+                shop.output(words[0])
 
     return shop
 

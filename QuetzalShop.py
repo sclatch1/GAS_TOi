@@ -97,11 +97,11 @@ class QuetzalShop:
 
         self.bestellingen.order(tijdstip, tijd, ingredienten, email, self.stock)
 
-    def output(self):
+    def output(self, name):
         """
         :return: output gegevens in html bestand
         """
-        log = generate_log.Output(self)
+        log = generate_log.Output(self.bestellingen, name)
         log.generate_html()
 
     def verwerk_bestelling(self, bestelling, werknemer):
