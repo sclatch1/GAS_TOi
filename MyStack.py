@@ -1,5 +1,12 @@
-# linkbased
+#============================================================================
+# Name        : MyStack.py
+# Author      : David Scalais
+# Copyright   : GAS - BA1 Informatica - David Scalais - University of Antwerp
+# Description : link-based Stack implementation in python
+#============================================================================
+
 class StackItemType:
+
     def __init__(self, value, next=None):
         """
         creëert een item met als attribute een value en een next
@@ -8,6 +15,7 @@ class StackItemType:
         """
         self.value = value
         self.next = next
+
 
 class MyStack:
     def __init__(self):
@@ -28,10 +36,12 @@ class MyStack:
         postconditie:
         :return: True als de stack leeg is
         """
+        succes = [True]
         if self.top == None:
-            return True
+            return succes[0]
         else:
-            return False
+            succes.append(False)
+            return succes[1]
 
     def push(self, newItem):
         """
@@ -42,9 +52,18 @@ class MyStack:
         :param newItem:
         :return: True
         """
-        newItem.next = self.top
-        self.top = newItem
+
+        test = StackItemType(newItem)
+
+        if(self.top == None):
+            self.top = test
+
+        else:
+            test.next = self.top
+            self.top = test
+
         return True
+
     def pop(self):
         """
         Verwijdert de top van een stack, d.i. het laatst toegevoegde element.
@@ -53,11 +72,13 @@ class MyStack:
         :return: False als stack leeg is
         Geeft de laatst toegevoegde element weer
         """
-        if self.top == None:
-            return False
+        if(self.isEmpty()):
+            return (None, False)
         else:
+            StackTop = self.top.value
             self.top = self.top.next
-            return self.top
+            return (StackTop, False)
+
     def getTop(self):
         """
         Plaatst de top van een stack (d.i. het laatst toegevoegde element) in
@@ -67,10 +88,25 @@ class MyStack:
         :return: False als stack leeg is
         True
         """
+
         if self.top == None:
-            return False
+
+            return (None, False)
         else:
-            self.stackTop = self.top
-            return True
+            StackTop = self.top.value
+            return (StackTop, False)
 
+    def save(self):
+        omgekeerd = []
+        current = self.top
+        while(current != None):
+            omgekeerd.append(current.value)
+            current = current.next
+        return omgekeerd[::-1]
 
+    def load(self, stack):
+        while(self.isEmpty() != True):
+            self.pop()
+        else:
+            for item in stack:
+                self.push(item)
