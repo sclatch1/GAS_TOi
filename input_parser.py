@@ -65,7 +65,7 @@ def input_parser(filename):
                     tempwords = ''.join([i for i in line if not i.isdigit()])  # extract words
                     numbers = tempnumbers.split()
                     words = tempwords.split()
-                    email = words[0]
+                    email = words[1]
                     words.remove(words[0])
                     shop.bestelling(numbers[0], [numbers[1],numbers[2],numbers[3],numbers[4], numbers[5]], words, email)
 
