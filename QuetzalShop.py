@@ -105,48 +105,5 @@ class QuetzalShop:
         log.generate_html()
         log.generate_data()
 
-    def verwerk_bestelling(self, bestelling, werknemer):
-        """
-        verwerkt een bestelling door een werknemer via credit systeem.
-        voor verwerking wordt bestelling en werknemer voorgesteld als credit
-        preconditie: bestelling en werknemer is een integer die crediten voorstelt
-        :param bestelling: aantal credit
-        :param werknemer: aantal credit die een werknemer kan verwerken
-        :return: geeft niets terug
-        """
-        pass
-
-    def verhoog_kassa(self, prijs_bestelling):
-        """
-        krijgt geld verschuldig van gebruiker voor bestelling
-        preconditie: een integer
-        postconditie: geld in kassa wordt verhoogt met prijs bestelling
-        :param prijs_bestelling: is een integer van de prijs
-        :return: geeft niks terug
-        """
-        pass
-
-    def verlaag_kassa(self, salaries, stocks):
-        """
-        verlaag kassa met prijs van stockaanvulling en salaries toegekend.
-        preconditie: genoeg geld in kassa
-        postconditie: kassa wordt verlaagt met prijs
-        :param salaries: een integer
-        :param stocks: een integer
-        :return: geeft niks terug
-        """
-        pass
-
-    def betaalt_salaries(self, werknemer, salaries):
-        """
-        werknemers ontvangen salaries
-        preconditie: salaries is een integer
-        postconditie: kassa wordt verlaagt met salaries
-        :param werknemer: id_werknemer
-        :param salaries: integer
-        :return: geeft niks terug
-        """
-        pass
-
 shop = QuetzalShop()
 shop.output()

@@ -36,33 +36,3 @@ class gebruikers:
         """
 
         self.gebruikers.searchTreeDelete(voornaam + " " + achternaam)
-
-    def meld_aan(self):
-        """
-        check of een gebruiker in de databank is
-        zoniet -> foutmelding
-        zowel -> kan een bestelling plaatsen
-        preconditie: id is een unieke string
-        postconditie: kan een bestelling plaatsen
-        :param id: e-mailadres van gebruiker
-        :return: geeft niks terug
-        """
-        pass
-
-    def meldt_af(self):
-        """
-        kan zich afmelden
-        postconditie: moet eerst aangemeld zijn
-        :param id: unieke string van gebruiker
-        :return:
-        """
-        pass
-
-    def betaalt_bestelling(self):
-        """
-        preconditie: moet een bestelling gemaakt hebben
-        postconditie: kassa wordt verhoogt met geld van klant
-        :param bestelling: bestelling van gebruiker
-        :return: geeft niks terug
-        """
-        pass
