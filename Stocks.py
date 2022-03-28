@@ -6,6 +6,7 @@ from Marshmallow import Marshmallow
 from Honing import Honing
 import arraybased_queue
 from datetime import date
+from QueueTabel import QueueTabel
 
 def days_calculator(date1, date2):
     # berekent tijd tussen 2 datums
@@ -18,13 +19,13 @@ def days_calculator(date1, date2):
 class Stocks:
     def __init__(self):
         # elke stock opgeslagen in een aparte queue
-        self.stock_chili = arraybased_queue.MyQueue(100)
-        self.stock_marshmellow = arraybased_queue.MyQueue(100)
-        self.stock_honing = arraybased_queue.MyQueue(100)
-        self.stock_shot_melk = arraybased_queue.MyQueue(100)
-        self.stock_shot_wit = arraybased_queue.MyQueue(100)
-        self.stock_shot_zwart = arraybased_queue.MyQueue(100)
-        self.stock_shot_bruin = arraybased_queue.MyQueue(100)
+        self.stock_chili = QueueTabel(100)
+        self.stock_marshmellow = QueueTabel(100)
+        self.stock_honing = QueueTabel(100)
+        self.stock_shot_melk = QueueTabel(100)
+        self.stock_shot_wit = QueueTabel(100)
+        self.stock_shot_zwart = QueueTabel(100)
+        self.stock_shot_bruin = QueueTabel(100)
 
     ### functionaliteit
 

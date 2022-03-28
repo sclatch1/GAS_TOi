@@ -20,6 +20,9 @@ class QueueTabel:
     def enqueue(self,item):
         self.myQueue.enqueue(item)
 
+    def dequeue(self):
+        return self.myQueue.dequeue()
+
     def GetFront(self):
         return self.myQueue.getFront()
 
