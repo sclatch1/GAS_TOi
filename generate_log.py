@@ -36,12 +36,12 @@ class Output:
                 self.tijdstip_1 += " "
                 self.tijdstip_1 += " "
                 self.tijdstip_1 += " "
-                self.tijdstip_1 += len(wit.save)
-                self.tijdstip_1 += len(melk.save())
-                self.tijdstip_1 += len(zwart.save())
-                self.tijdstip_1 += len(honing.save())
-                self.tijdstip_1 += len(marshmallow.save())
-                self.tijdstip_1 += len(chili.save())
+                self.tijdstip_1.append(len(wit.save()))
+                self.tijdstip_1.append(len(melk.save()))
+                self.tijdstip_1.append(len(zwart.save()))
+                self.tijdstip_1.append(len(honing.save()))
+                self.tijdstip_1.append(len(marshmallow.save()))
+                self.tijdstip_1.append(len(chili.save()))
 
         print(self.tijdstip_1,"test")
         print(data)
