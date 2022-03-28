@@ -74,6 +74,7 @@ def input_parser(filename):
                 # genereer output
                 elif ("log" in line):
                     words = line.split()
+                    shop.generate_data()
                     shop.output(words[0])
 
                 # extra stock toevoegingen
