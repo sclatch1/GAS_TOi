@@ -50,6 +50,10 @@ class Output:
         self.tijdstippen[self.tijdstip - 1].append(len(stock.stock_shot_melk.save()))
         self.lijst.append("melk")
 
+        # melk
+        self.tijdstippen[self.tijdstip - 1].append(len(stock.stock_shot_bruin.save()))
+        self.lijst.append("bruin")
+
         # zwart
         self.tijdstippen[self.tijdstip - 1].append(len(stock.stock_shot_zwart.save()))
         self.lijst.append("zwart")
