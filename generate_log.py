@@ -23,7 +23,7 @@ class Output:
         self.lijst.append("tijdstip")
 
         # stack
-        self.tijdstippen[self.tijdstip - 1].append("?")
+        self.tijdstippen[self.tijdstip - 1].append("/")
         self.lijst.append("stack")
 
         # users (onbepaald aantal)
@@ -39,7 +39,7 @@ class Output:
         self.lijst.append("Nieuwe bestellingen")
 
         # wachtende bestellingen
-        self.tijdstippen[self.tijdstip - 1].append("?")
+        self.tijdstippen[self.tijdstip - 1].append("/")
         self.lijst.append("Wachtende bestellingen")
 
         # wit
