@@ -28,25 +28,22 @@ class Output:
         output += rij
 
         # rijen met data
+
         rij = "<TR>"
-        for element in self.tijdstip_1:
-            rij += "<TD>" + str(element) + "</TD>"
-        rij += "</TR>"
-        output += rij
-        for element in self.tijdstip_2:
-            rij += "<TD>" + str(element) + "</TD>"
-        rij += "</TR>"
-        output += rij
-        for element in self.tijdstip_3:
-            rij += "<TD>" + str(element) + "</TD>"
-        rij += "</TR>"
-        output += rij
-        for element in self.tijdstip_4:
-            rij += "<TD>" + str(element) + "</TD>"
-        rij += "</TR>"
-        output += rij
+        for tijdstip in self.tijdstippen:
+            rij = "<TR>"
+            for data in tijdstip:
+                rij += "<TD>" + str(data) + "</TD>"
+            rij += "</TR>"
+            output += rij
 
         # tabel eindigt hier
         output += "</table> </html>"
-        hs = open("log" + naam + ".html", 'w')
+        name_file = "log" + naam + ".html"
+        hs = open(name_file, 'w')
         hs.write(output)
+
+"""
+out = Output()
+out.generate_html("4")
+"""
