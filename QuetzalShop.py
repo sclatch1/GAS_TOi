@@ -13,6 +13,7 @@ class QuetzalShop:
         self.bestellingen = Bestelling()  # dictionary van bestellingen: bestelling en prijs
         self.werknemers = Werknemer.werknemers()  # werknemers klasse: bewaard werknemers
         self.gebruikers = Gebruiker.gebruikers()  # gebruiker klasse: bewaard gebruikers
+        self.log = Output()
 
     ### functionaliteit
 
@@ -101,9 +102,10 @@ class QuetzalShop:
         """
         :return: output gegevens in html bestand
         """
-        log = Output(self.bestellingen,self.stock,self.werknemers, naam)
-        log.generate_data()
-        log.generate_html()
+        self.log.generate_html(naam)
+
+    def generate_data(self):
+        self.log.generate_data(self.bestellingen, self.stock, self.werknemers)
 
 shop = QuetzalShop()
 shop.output("4")
