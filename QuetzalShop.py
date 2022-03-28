@@ -102,8 +102,8 @@ class QuetzalShop:
         :return: output gegevens in html bestand
         """
         log = Output(self.bestellingen,self.stock,self.werknemers, naam)
-        log.generate_html()
         log.generate_data()
+        log.generate_html()
 
 shop = QuetzalShop()
 shop.output("4")
