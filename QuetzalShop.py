@@ -109,6 +109,3 @@ class QuetzalShop:
         :return: output gegevens in log
         """
         self.log.generate_data(self.bestellingen, self.stock, self.werknemers, self.gebruikers)
-
-shop = QuetzalShop()
-shop.output("4")

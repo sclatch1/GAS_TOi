@@ -9,20 +9,25 @@ class Output:
     def __init__(self):
         self.lijst = ["tijdstip", "stack", "naam", "Nieuwe bestellingen", "Wachtende bestellingen", "wit", "melk",
                       "zwart", "honing", "marshmallow", "chili"]
-        self.tijdstippen = []
+        self.tijdstippen = list()
         self.tijdstip = 1
 
     def generate_data(self, bestelling: Bestelling, stock: Stocks, werknemers: werknemers, gebruikers: gebruikers):
         # generate data voor het huidige tijdstip
+        self.tijdstippen.append(list())
 
         # tijdstip
-        self.tijdstippen[self.tijdstip-1] = [self.tijdstip]
+        self.tijdstippen[self.tijdstip - 1].append(self.tijdstip)
 
         # stack
-        self.tijdstippen[self.tijdstip - 1][1] = "?"
+        self.tijdstippen[self.tijdstip - 1].append("?")
 
         # users (onbepaald aantal)
-
+        y = 2
+        gebruikers_array = gebruikers.gebruikers.inorderTraverse()
+        for x in gebruikers_array:
+            self.tijdstippen[self.tijdstip - 1].append("?")
+            y += 1
 
         # nieuwe bestellingen
 
