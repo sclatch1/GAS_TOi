@@ -105,7 +105,7 @@ class QuetzalShop:
         self.log.generate_html(naam)
 
     def generate_data(self):
-        self.log.generate_data(self.bestellingen, self.stock, self.werknemers)
-
-shop = QuetzalShop()
-shop.output("4")
+        """
+        :return: output gegevens in log
+        """
+        self.log.generate_data(self.bestellingen, self.stock, self.werknemers, self.gebruikers)
