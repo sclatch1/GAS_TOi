@@ -5,7 +5,7 @@ from arraybased_queue import MyQueue
 
 
 class Output:
-    def __init__(self, bestelling: Bestelling, stock: Stocks, werknemers: werknemers,naam):
+    def __init__(self, bestelling: Bestelling, stock: Stocks, werknemers: werknemers, naam):
         self.lijst = ["tijdstip", "stack", "naam", "Nieuwe bestellingen", "Wachtende bestellingen", "wit", "melk",
                       "zwart", "honing", "marshmallow", "chili"]
         self.tijdstip_1 = [0]
@@ -17,7 +17,6 @@ class Output:
         self.werknemers = werknemers
         self.stock = stock
         self.name = naam
-
 
     def generate_data(self):
         data = []
@@ -31,7 +30,6 @@ class Output:
         chili = self.stock.stock_chili
         for element in data:
             if 0 == 0:
-
                 self.tijdstip_1 += " "
                 self.tijdstip_1 += " "
                 self.tijdstip_1 += " "
@@ -43,11 +41,10 @@ class Output:
                 self.tijdstip_1.append(len(marshmallow.save()))
                 self.tijdstip_1.append(len(chili.save()))
 
-        print(self.tijdstip_1,"test")
+        print(self.tijdstip_1)
         print(data)
-    #)
 
-
+    # )
 
     def generate_html(self):
         output = "<html>" + "<h1>Log</h1>"
@@ -80,9 +77,7 @@ class Output:
         rij += "</TR>"
         output += rij
 
-
         # tabel eindigt hier
         output += "</table> </html>"
-        hs = open( self.name + ".html", 'w')
+        hs = open("log" + self.name + ".html", 'w')
         hs.write(output)
-

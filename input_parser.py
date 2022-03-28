@@ -15,12 +15,10 @@ def input_parser(filename):
 
             # initialiseer QuetzalShop
             if (line == "init\n"):
-                print("init")
                 mode = 0
 
             # start
             if (line == "start\n"):
-                print("start")
                 mode = 1
 
             if mode == 0:
