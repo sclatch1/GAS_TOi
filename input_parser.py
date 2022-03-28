@@ -83,25 +83,25 @@ def input_parser(filename):
                     numbers = tempnumbers.split()
                     if ("shot" in line):
                         if ("melk" in line):
-                            shop.vul_stock_aan(6, numbers[1], [numbers[1], numbers[2], numbers[3]])
+                            shop.vul_stock_aan(6, numbers[1], [numbers[2], numbers[3], numbers[4]])
 
                         elif ("wit" in line):
-                            shop.vul_stock_aan(3, numbers[1], [numbers[1], numbers[2], numbers[3]])
+                            shop.vul_stock_aan(3, numbers[1], [numbers[2], numbers[3], numbers[4]])
 
                         elif ("zwart" in line):
-                            shop.vul_stock_aan(5, numbers[1], [numbers[1], numbers[2], numbers[3]])
+                            shop.vul_stock_aan(5, numbers[1], [numbers[2], numbers[3], numbers[4]])
 
                         elif ("bruin" in line):
-                            shop.vul_stock_aan(4, numbers[1], [numbers[1], numbers[2], numbers[3]])
+                            shop.vul_stock_aan(4, numbers[1], [numbers[2], numbers[3], numbers[4]])
 
                     elif ("honing" in line):
-                        shop.vul_stock_aan(0, numbers[1], [numbers[1], numbers[2], numbers[3]])
+                        shop.vul_stock_aan(0, numbers[1], [numbers[2], numbers[3], numbers[4]])
 
                     elif ("marshmallow" in line):
-                        shop.vul_stock_aan(1, numbers[1], [numbers[1], numbers[2], numbers[3]])
+                        shop.vul_stock_aan(1, numbers[1], [numbers[2], numbers[3], numbers[4]])
 
                     elif ("chili" in line):
-                        shop.vul_stock_aan(2, numbers[1], [numbers[1], numbers[2], numbers[3]])
+                        shop.vul_stock_aan(2, numbers[1], [numbers[2], numbers[3], numbers[4]])
 
                     # vul werknemers en gebruikers aan
                     elif ("werknemer" in line):
