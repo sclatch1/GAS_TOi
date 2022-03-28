@@ -42,7 +42,7 @@ def input_parser(filename):
                 elif ("honing" in line):
                     shop.vul_stock_aan(0,numbers[0], [numbers[1], numbers[2], numbers[3]])
 
-                elif ("marshmellow" in line):
+                elif ("marshmallow" in line):
                     shop.vul_stock_aan(1,numbers[0], [numbers[1], numbers[2], numbers[3]])
 
                 elif ("chili" in line):
