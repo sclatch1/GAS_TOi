@@ -28,8 +28,6 @@ class Output:
         output += rij
 
         # rijen met data
-
-        rij = "<TR>"
         for tijdstip in self.tijdstippen:
             rij = "<TR>"
             for data in tijdstip:
