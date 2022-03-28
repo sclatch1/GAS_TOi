@@ -1,6 +1,7 @@
 from Bestelling import Bestelling
 from Stocks import Stocks
 from Werknemer import werknemers
+from Gebruiker import gebruikers
 from arraybased_queue import MyQueue
 
 
@@ -11,9 +12,28 @@ class Output:
         self.tijdstippen = []
         self.tijdstip = 1
 
-    def generate_data(self, bestelling: Bestelling, stock: Stocks, werknemers: werknemers):
+    def generate_data(self, bestelling: Bestelling, stock: Stocks, werknemers: werknemers, gebruikers: gebruikers):
         # generate data voor het huidige tijdstip
-        pass
+
+        # tijdstip
+        self.tijdstippen[self.tijdstip-1] = [self.tijdstip]
+
+        # stack
+        self.tijdstippen[self.tijdstip - 1][1] = "?"
+
+        # users (onbepaald aantal)
+
+
+        # nieuwe bestellingen
+
+
+        # wachtende bestellingen
+
+
+        # stock (7)
+
+
+        self.tijdstip += 1
 
     def generate_html(self, naam):
         output = "<html>" + "<h1>Log</h1>"
