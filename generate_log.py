@@ -8,15 +8,12 @@ class Output:
     def __init__(self, bestelling: Bestelling, stock: Stocks, werknemers: werknemers, naam):
         self.lijst = ["tijdstip", "stack", "naam", "Nieuwe bestellingen", "Wachtende bestellingen", "wit", "melk",
                       "zwart", "honing", "marshmallow", "chili"]
-        self.tijdstip_1 = [0]
-        self.tijdstip_2 = [1]
-        self.tijdstip_3 = [2]
-        self.tijdstip_4 = [3]
-        self.tijdstip_5 = [4]
+        self.tijdstippen = []
         self.bestellingen = bestelling
         self.werknemers = werknemers
         self.stock = stock
         self.name = naam
+        self.tijdstip = 1
 
     def generate_data(self):
         data = []
@@ -43,7 +40,6 @@ class Output:
 
         print(self.tijdstip_1)
         print(data)
-
     # )
 
     def generate_html(self):
