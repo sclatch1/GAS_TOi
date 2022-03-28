@@ -35,7 +35,7 @@ class Output:
             y += 1
 
         # nieuwe bestellingen
-        self.tijdstippen[self.tijdstip - 1].append("?")
+        self.tijdstippen[self.tijdstip - 1].append(len(bestelling.bestellingen.save()))
         self.lijst.append("Nieuwe bestellingen")
 
         # wachtende bestellingen
