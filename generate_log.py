@@ -1,6 +1,7 @@
 from Bestelling import Bestelling
 from Stocks import Stocks
 from Werknemer import werknemers
+from arraybased_queue import MyQueue
 
 
 class Output:
@@ -19,10 +20,29 @@ class Output:
 
 
     def generate_data(self):
-        data = self.bestellingen.bestellingen.save()
+        data = []
+        data += self.bestellingen.bestellingen.save()
+        wit = self.stock.stock_shot_wit
+        melk = self.stock.stock_shot_melk
+        zwart = self.stock.stock_shot_zwart
+        bruin = self.stock.stock_shot_bruin
+        honing = self.stock.stock_honing
+        marshmallow = self.stock.stock_marshmellow
+        chili = self.stock.stock_chili
         for element in data:
-            if element[0] == 1:
-                self.tijdstip_1 += "hey"
+            if 0 == 0:
+
+                self.tijdstip_1 += " "
+                self.tijdstip_1 += " "
+                self.tijdstip_1 += " "
+                self.tijdstip_1 += " "
+                self.tijdstip_1 += len(wit.save)
+                self.tijdstip_1 += len(melk.save())
+                self.tijdstip_1 += len(zwart.save())
+                self.tijdstip_1 += len(honing.save())
+                self.tijdstip_1 += len(marshmallow.save())
+                self.tijdstip_1 += len(chili.save())
+
         print(self.tijdstip_1,"test")
         print(data)
     #)
@@ -63,6 +83,6 @@ class Output:
 
         # tabel eindigt hier
         output += "</table> </html>"
-        hs = open( "log" + self.name + ".html", 'w')
+        hs = open( self.name + ".html", 'w')
         hs.write(output)
 
