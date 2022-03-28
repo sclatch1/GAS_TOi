@@ -5,6 +5,7 @@ def input_parser(filename):
     # variablen
     shop = QuetzalShop()
     mode = 2  # 0 als init en 1 als start, 2 is geen van beide
+    current_timestamp = 1
 
     # voer bestand uit
     file = open(filename, 'r')
@@ -65,6 +66,9 @@ def input_parser(filename):
                     words = tempwords.split()
                     email = words[1]
                     words.remove(words[0])
+                    if (current_timestamp != numbers[0]):   # generate data als verandering in tijdstip
+                        shop.generate_data()
+                        current_timestamp = numbers[0]
                     shop.bestelling(numbers[0], [numbers[1],numbers[2],numbers[3],numbers[4], numbers[5]], words, email)
 
                 # genereer output
