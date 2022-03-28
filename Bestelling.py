@@ -4,11 +4,11 @@ from arraybased_queue import MyQueue
 #from MyQueue import MyQueue
 from Chocolademelk import Chocolademelk
 import Stocks
-
+from QueueTabel import QueueTabel
 
 class Bestelling:
     def __init__(self):
-        self.bestellingen = MyQueue(100)
+        self.bestellingen = QueueTabel(100)
         self.timestamps = dict()
 
     ### functionaliteit

@@ -14,19 +14,19 @@ class QueueTabel:
     def __init__(self,max_size):
         self.myQueue = MyQueue(max_size)
 
-    def TableIsEmpty(self):
-        self.myQueue.isEmpty()
+    def IsEmpty(self):
+        return self.myQueue.isEmpty()
 
-    def TableEnqueu(self,item):
+    def enqueue(self,item):
         self.myQueue.enqueue(item)
 
-    def TableGetFront(self):
-        self.myQueue.getFront()
+    def GetFront(self):
+        return self.myQueue.getFront()
 
-    def TableSave(self):
-        self.myQueue.save()
+    def save(self):
+        return self.myQueue.save()
 
-    def TableLoad(self,list):
+    def load(self,list):
         self.myQueue.load(list)
 
 
