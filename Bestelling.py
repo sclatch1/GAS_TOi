@@ -82,5 +82,4 @@ class Bestelling:
             elif x == 6:
                 bestelling.voeg_chocolade_toe(3)
                 stock.verlaag_stock(6, 1)
-
         self.bestellingen.enqueue([tijdstip, email, bestelling])

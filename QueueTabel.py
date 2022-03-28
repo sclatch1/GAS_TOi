@@ -8,11 +8,12 @@
 #============================================================================
 
 
-from arraybased_queue import MyQueue
+from MyQueue import MyQueue
+
 
 class QueueTabel:
     def __init__(self):
-        self.myQueue = MyQueue(100)
+        self.myQueue = MyQueue()
 
     def IsEmpty(self):
         return self.myQueue.isEmpty()

@@ -90,10 +90,11 @@ class MyQueue:
         omgekeerd = []
 
         current = self.front
-        while (current != self.back):
-            omgekeerd.append(current.value)
-            current = current.next
-        omgekeerd.append(self.back.value)
+        if current != None:
+            while (current != self.back):
+                omgekeerd.append(current.value)
+                current = current.next
+            omgekeerd.append(self.back.value)
         return omgekeerd[::-1]
 
     def load(self, list):
