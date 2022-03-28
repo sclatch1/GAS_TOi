@@ -28,8 +28,8 @@ class Output:
 
         # users (onbepaald aantal)
         y = 2
-        gebruikers_array = gebruikers.gebruikers.inorderTraverse()
-        for x in gebruikers_array:
+        werknemers_array = werknemers.werknemers_namen
+        for x in werknemers_array:
             self.tijdstippen[self.tijdstip - 1].append("?")
             self.lijst.append(x)
             y += 1

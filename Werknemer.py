@@ -5,6 +5,7 @@ class werknemers():
 
     def __init__(self):
         self.werknemers = BST()
+        self.werknemers_namen = list()
 
     def add_werknemer(self,voornaam, achternaam, workload):
 
@@ -24,6 +25,7 @@ class werknemers():
         """
 
         self.werknemers.searchTreeInsert([voornaam + " " + achternaam, workload])
+        self.werknemers_namen.append(voornaam + " " + achternaam)
 
     def verwijder_werknemer(self,voornaam, achternaam):
         """
