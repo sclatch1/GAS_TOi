@@ -11,8 +11,8 @@
 from arraybased_queue import MyQueue
 
 class QueueTabel:
-    def __init__(self,max_size):
-        self.myQueue = MyQueue(max_size)
+    def __init__(self):
+        self.myQueue = MyQueue(100)
 
     def IsEmpty(self):
         return self.myQueue.isEmpty()

@@ -8,7 +8,7 @@ from QueueTabel import QueueTabel
 
 class Bestelling:
     def __init__(self):
-        self.bestellingen = QueueTabel(100)
+        self.bestellingen = QueueTabel()
         self.timestamps = dict()
 
     ### functionaliteit

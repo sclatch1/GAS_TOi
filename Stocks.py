@@ -19,13 +19,13 @@ def days_calculator(date1, date2):
 class Stocks:
     def __init__(self):
         # elke stock opgeslagen in een aparte queue
-        self.stock_chili = QueueTabel(100)
-        self.stock_marshmellow = QueueTabel(100)
-        self.stock_honing = QueueTabel(100)
-        self.stock_shot_melk = QueueTabel(100)
-        self.stock_shot_wit = QueueTabel(100)
-        self.stock_shot_zwart = QueueTabel(100)
-        self.stock_shot_bruin = QueueTabel(100)
+        self.stock_chili = QueueTabel()
+        self.stock_marshmellow = QueueTabel()
+        self.stock_honing = QueueTabel()
+        self.stock_shot_melk = QueueTabel()
+        self.stock_shot_wit = QueueTabel()
+        self.stock_shot_zwart = QueueTabel()
+        self.stock_shot_bruin = QueueTabel()
 
     ### functionaliteit
 
