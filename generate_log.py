@@ -60,7 +60,7 @@ class Output:
 
         # marshmellow
         self.tijdstippen[self.tijdstip - 1].append(len(stock.stock_marshmellow.save()))
-        self.lijst.append("marshmellow")
+        self.lijst.append("marshmallow")
 
         # chili
         self.tijdstippen[self.tijdstip - 1].append(len(stock.stock_chili.save()))
