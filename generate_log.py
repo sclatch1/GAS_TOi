@@ -30,7 +30,7 @@ class Output:
         y = 2
         werknemers_array = werknemers.werknemers_namen
         for x in werknemers_array:
-            self.tijdstippen[self.tijdstip - 1].append("?")
+            self.tijdstippen[self.tijdstip - 1].append(werknemers.werknemers.searchTreeRetrieve(x)[0])
             self.lijst.append(x)
             y += 1
 
